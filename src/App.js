@@ -1,7 +1,9 @@
 import React, {useState, useEffect} from 'react';
+import {BrowserRouter, Route, Switch} from 'react-router-dom';
 import Header from './components/Header';
 import IncomeForm from './components/IncomeForm';
-import ListTransactions from './components/ListTransactions'
+import ListTransactions from './components/ListTransactions';
+import Login from './components/Login';
 
 function App() {
   const [income, setIncome] = useState([]);
@@ -15,8 +17,14 @@ function App() {
     setTotalIncome(addToBalance)
   }, [income]);
   return (
+   
 
     <div className="App">
+      <BrowserRouter>
+        <Switch>
+          <Route exact path="/" component={Login} />
+        </Switch>
+      </BrowserRouter>
       <Header totalIncome={totalIncome} />
       <IncomeForm income={income} setIncome={setIncome}/>
       <ListTransactions income={income} setIncome={setIncome} />
