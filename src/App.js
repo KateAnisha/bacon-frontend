@@ -1,16 +1,25 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import Header from './components/Header';
+import IncomeForm from './components/IncomeForm';
 
 function App() {
+  const [income, setIncome] = useState([]);
+  const [totalIncome, setTotalIncome] = useState(0);
+
+  useEffect(() => {
+    let addToBalance = 0;
+    for(let i = 0; i < income.length; i++){
+      addToBalance += parseInt(income[i].amount);
+    }
+    setTotalIncome(addToBalance)
+  }, [income]);
   return (
-    <div style={{ textAlign: 'center' }}>
-      <header>
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          
-        </a>
-      </header>
+
+    <div className="App">
+      <Header totalIncome={totalIncome} />
+      <IncomeForm income={income} setIncome={setIncome}/>
+      
+
     </div>
   );
 }
