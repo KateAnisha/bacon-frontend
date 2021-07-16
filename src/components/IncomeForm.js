@@ -8,7 +8,7 @@ function IncomeForm({income, setIncome}) {
     const AddIncome = e => {
         e.preventDefault();
 
-        let d = date.current.value.split(".");
+        let d = date.current.value.split("-");
         let newD = new Date(d[0], d[1] - 1, d[2]);
 
         setIncome([...income, {
