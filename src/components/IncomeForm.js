@@ -1,14 +1,15 @@
-import React, {useRef} from 'react'
+import React, {useRef} from 'react';
 
 function IncomeForm({income, setIncome}) {
     const description = useRef(null);
     const date = useRef(null);
     const amount = useRef(null);
+
     const AddIncome = e => {
         e.preventDefault();
 
         let d = date.current.value.split(".");
-        let newD = new Date(d[0], d[1], d[2])
+        let newD = new Date(d[0], d[1] - 1, d[2]);
 
         setIncome([...income, {
             "description": description.current.value,
