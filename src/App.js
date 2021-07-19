@@ -1,6 +1,6 @@
-import {useState, useEffect} from 'react';
+// import {useState, useEffect} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import Header from './components/Header';
+// import Header from './components/Header';
 
 import Login from './components/Login';
 import MainNav from './components/MainNav';
@@ -13,6 +13,7 @@ function App() {
    
     <div className="App">
       <Router>
+      {/* Once user logged in, show main nav */}
       <MainNav />
         <Switch>
           <Route exact path="/" component={Index} />
@@ -22,9 +23,6 @@ function App() {
           <Route exact path="/expenses" component={Expenses} />
         </Switch>
       </Router>
-      
-      
-      
     </div>
   );
 }

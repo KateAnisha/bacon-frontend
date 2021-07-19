@@ -3,6 +3,7 @@ import React, {useState, useEffect} from 'react';
 import TransactionForm from '../components/TransactionForm';
 import ListTransactions from '../components/ListTransactions';
 import TransactionItem from '../components/TransactionItem';
+import Header from '../components/Header';
 
 function Expenses() {
     const [income, setIncome] = useState([]);
@@ -21,7 +22,8 @@ function Expenses() {
         <h1>expense</h1>
                 <TransactionForm />
                 {/* <ListTransactions />
-                <TransactionItem /> */}
+                <TransactionItem />
+                <Header /> */}
         </div>
        
     )

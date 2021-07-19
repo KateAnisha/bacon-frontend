@@ -4,6 +4,8 @@ function Index() {
     return (
         <div>
             <h1>Login/register page</h1>
+            <button>Login</button>
+            <button>Register</button>
         </div>
     )
 }
