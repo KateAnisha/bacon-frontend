@@ -1,6 +1,6 @@
 import React, {useRef} from 'react';
 
-function IncomeForm({income, setIncome}) {
+function TransactionForm({income, setIncome}) {
     const description = useRef(null);
     const date = useRef(null);
     const amount = useRef(null);
@@ -28,8 +28,9 @@ function IncomeForm({income, setIncome}) {
             <input type="decimal" name="amount" id="amount" placeholder="Amount" ref={amount}/>
             <input type="date" name="date" id="date" placeholder="date" ref={date}/>
             <input type="submit" value="Add transaction"/>
-       </form>
+        </form>
+        
     )
-}
 
-export default IncomeForm
+}
+export default TransactionForm
