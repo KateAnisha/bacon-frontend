@@ -5,6 +5,11 @@ export default function Login(props) {
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
+    const submit = async (event) => {
+        event.preventDefault()
+        
+    }
+
     return (
         <>
             <h1>Login</h1>

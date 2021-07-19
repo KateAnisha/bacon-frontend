@@ -4,6 +4,7 @@ import Header from './components/Header';
 import IncomeForm from './components/IncomeForm';
 import ListTransactions from './components/ListTransactions';
 import Login from './components/Login';
+import MainNav from './components/MainNav';
 
 function App() {
   const [income, setIncome] = useState([]);
@@ -21,6 +22,7 @@ function App() {
 
     <div className="App">
       <BrowserRouter>
+      <MainNav />
         <Switch>
           <Route exact path="/" component={Login} />
         </Switch>
