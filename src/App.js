@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import Header from './components/Header';
 import IncomeForm from './components/IncomeForm';
 import ListTransactions from './components/ListTransactions';
 import Login from './components/Login';
 import MainNav from './components/MainNav';
+import Index from './components/Index';
 
 function App() {
   const [income, setIncome] = useState([]);
@@ -21,12 +22,12 @@ function App() {
    
 
     <div className="App">
-      <BrowserRouter>
+      <Router>
       <MainNav />
         <Switch>
-          <Route exact path="/" component={Login} />
+          <Route exact path="/" exact component={Index} />
         </Switch>
-      </BrowserRouter>
+      </Router>
       <Header totalIncome={totalIncome} />
       <IncomeForm income={income} setIncome={setIncome}/>
       <ListTransactions income={income} setIncome={setIncome} />
