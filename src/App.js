@@ -1,25 +1,28 @@
-import React, {useState, useEffect} from 'react';
-import Header from './components/Header';
-import IncomeForm from './components/IncomeForm';
+// import {useState, useEffect} from 'react';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+// import Header from './components/Header';
+
+import Login from './components/Login';
+import MainNav from './components/MainNav';
+import Index from './components/Index';
+import Expenses from './pages/Expenses';
 
 function App() {
-  const [income, setIncome] = useState([]);
-  const [totalIncome, setTotalIncome] = useState(0);
-
-  useEffect(() => {
-    let addToBalance = 0;
-    for(let i = 0; i < income.length; i++){
-      addToBalance += parseInt(income[i].amount);
-    }
-    setTotalIncome(addToBalance)
-  }, [income]);
+  
   return (
-
+   
     <div className="App">
-      <Header totalIncome={totalIncome} />
-      <IncomeForm income={income} setIncome={setIncome}/>
-      
+      <Router>
+      {/* Once user logged in, show main nav */}
+      <MainNav />
+        <Switch>
+          <Route exact path="/" component={Index} />
+        </Switch>
 
+        <Switch>
+          <Route exact path="/expenses" component={Expenses} />
+        </Switch>
+      </Router>
     </div>
   );
 }
