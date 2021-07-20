@@ -20,10 +20,10 @@ function Expenses() {
     return ( 
         <div>
         <h1>expense</h1>
-                <TransactionForm />
-                {/* <ListTransactions />
+                <Header totalIncome={totalIncome} />
+                <TransactionForm income={income} setIncome={setIncome}/>
+                <ListTransactions income={income} setIncome={setIncome}/>
                 <TransactionItem />
-                <Header /> */}
         </div>
        
     )

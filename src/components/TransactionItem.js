@@ -3,7 +3,7 @@ import React from 'react';
 function TransactionItem({income, index, removeTransaction}) {
     let date = new Date(income.date);
     let day = date.getDate();
-    let month = date.getMonth() +1;
+    let month = date.getMonth() + 1;
     let year = date.getFullYear();
 
     const removeHandle = i => {
