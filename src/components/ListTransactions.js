@@ -13,10 +13,10 @@ function ListTransactions({income, setIncome}) {
     return (
         <div className="transaction-listing">
             {
-                income.sort(sortByDate).map((value, index) => (
+                income.sort(sortByDate).map((entry, index) => (
                     <TransactionItem 
                         key={index} 
-                        income={value} 
+                        income={entry} 
                         index={index} 
                         removeTransaction={removeTransaction}
                     />

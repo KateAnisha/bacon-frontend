@@ -4,19 +4,23 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 import Login from './components/Login';
 import MainNav from './components/MainNav';
-import Index from './components/Index';
+import Welcome from './pages/Welcome';
 import Expenses from './pages/Expenses';
+import Registration from './components/auth/Registration';
 
 function App() {
   
   return (
-   
     <div className="App">
+      <Welcome />
+      <Registration />
+      
+
       <Router>
       {/* Once user logged in, show main nav */}
-      <MainNav />
+        <MainNav />
         <Switch>
-          <Route exact path="/" component={Index} />
+          <Route exact path="/" component={Welcome} />
         </Switch>
 
         <Switch>
