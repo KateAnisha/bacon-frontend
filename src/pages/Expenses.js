@@ -23,7 +23,7 @@ function Expenses() {
                 <Header totalIncome={totalIncome} />
                 <TransactionForm income={income} setIncome={setIncome}/>
                 <ListTransactions income={income} setIncome={setIncome}/>
-                <TransactionItem />
+                {/* <TransactionItem income={income} /> */}
         </div>
        
     )

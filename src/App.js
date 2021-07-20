@@ -11,13 +11,14 @@ import Registration from './components/auth/Registration';
 function App() {
   
   return (
-   
     <div className="App">
       <Welcome />
       <Registration />
+      
+
       <Router>
       {/* Once user logged in, show main nav */}
-      <MainNav />
+        <MainNav />
         <Switch>
           <Route exact path="/" component={Welcome} />
         </Switch>

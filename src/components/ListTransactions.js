@@ -6,6 +6,7 @@ function ListTransactions({income, setIncome}) {
         let temp = income.filter((v, index) => index != i);
         setIncome(temp);
     }
+
     const sortByDate = (a, b) => {
         return a.date - b.date;
         
@@ -13,10 +14,10 @@ function ListTransactions({income, setIncome}) {
     return (
         <div className="transaction-listing">
             {
-                income.sort(sortByDate).map((value, index) => (
+                income.sort(sortByDate).map((entry, index) => (
                     <TransactionItem 
                         key={index} 
-                        income={value} 
+                        income={entry} 
                         index={index} 
                         removeTransaction={removeTransaction}
                     />
