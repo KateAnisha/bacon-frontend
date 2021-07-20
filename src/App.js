@@ -6,12 +6,14 @@ import Login from './components/Login';
 import MainNav from './components/MainNav';
 import Index from './components/Index';
 import Expenses from './pages/Expenses';
+import Registration from './components/auth/Registration';
 
 function App() {
   
   return (
    
     <div className="App">
+      <Registration />
       <Router>
       {/* Once user logged in, show main nav */}
       <MainNav />
