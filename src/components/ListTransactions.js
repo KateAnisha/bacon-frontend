@@ -6,7 +6,6 @@ function ListTransactions({income, setIncome}) {
         let temp = income.filter((v, index) => index != i);
         setIncome(temp);
     }
-
     const sortByDate = (a, b) => {
         return a.date - b.date;
         
