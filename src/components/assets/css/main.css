@@ -1,7 +1,11 @@
 .app-logo {
     width: 420px;
     height: auto;
-    
+    margin-top: -120px !important;
+}
+
+.welcome-btn{ 
+    margin-top: -120px;
 }
 
 .main-form {
@@ -9,13 +13,19 @@
     flex-direction: column;
 }
 
+.main-content {
+    /* display: none; */
+}
+
 .wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    background: url('city-bg.svg') no-repeat;
+    background: url('../images/city-bg.svg') no-repeat;
     background-size:contain;
     background-position: bottom;
     background: cover;
+    background-size: 120%;
+    /* margin-bottom: -300px; */
 }
 
 .left, .right {
@@ -23,5 +33,13 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.pig-img {
+    width: 320px;
+    height: auto;
+    position: absolute;
+    bottom: 1px;
+    left: 25px;
 }
 

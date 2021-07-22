@@ -9,22 +9,23 @@ import Expenses from './pages/Expenses';
 import Register from './pages/Register';
 import NewCategory from './components/NewCategory';
 import './components/assets/css/style.css';
-import appLogo from './components/assets/css/Logo-final.svg'
+// import appLogo from './components/assets/images/Logo-final.svg'
+
 
 function App() {
   
   const [categories, setCategories] = useState([])
   return (
     <div className="App">
-      <div className="header"> 
+      {/* <div className="header">  */}
         {/* <img src={appLogo} alt="Application Logo" className="app-logo"/> */}
-      </div>
+      {/* </div> */}
 
-      <div className="main-content">
+      {/* <div className="main-content"> */}
         <Welcome />
         {/* <Registration /> */}
         {/* <NewCategory /> */}
-      </div>
+      {/* </div> */}
 
       <Router>
       {/* Once user logged in, show main nav */}
