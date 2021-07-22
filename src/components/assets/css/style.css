@@ -22,8 +22,7 @@
     background-color: #ededed;
     width: 80px;
     height: 100%;
-    z-index: 1;
-    
+    z-index: 1; 
 }
 
 .main-content {
@@ -48,9 +47,9 @@ button {
     border-radius: 25px;
     cursor: pointer;
     color: #fff;
-    height: 58px;
+    height: 48px;
     width: 220px;
-    line-height: 58px;
+    line-height: 48px;
     text-transform: uppercase;
     border: 2px solid #32b2a7;
     text-align: center;
@@ -63,4 +62,13 @@ button:hover {
     background-color: #fff;
     border: 2px solid #32b2a7;
     color: #32B2A7;
+}
+
+h1, h2, p {
+    font-family: Helvetica, Arial;
+}
+
+.main-form {
+    display: flex;
+    flex-direction: column;
 }

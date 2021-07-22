@@ -6,7 +6,7 @@ import Login from './pages/Login';
 import MainNav from './components/MainNav';
 import Welcome from './pages/Welcome';
 import Expenses from './pages/Expenses';
-import Registration from './components/auth/Registration';
+import Register from './pages/Register';
 import NewCategory from './components/NewCategory';
 import './components/assets/css/style.css';
 import appLogo from './components/assets/css/Logo-final.svg'
@@ -24,8 +24,6 @@ function App() {
         <Welcome />
         {/* <Registration /> */}
         {/* <NewCategory /> */}
-        
-        <h2>Heading 2</h2>
       </div>
 
       <Router>
@@ -33,16 +31,18 @@ function App() {
       <div className="main-nav">
         <MainNav />
       </div>
-        <Switch>
-          {/* <Route exact path="/" component={Welcome} /> */}
-          {/* <Route exact path="/category/new" render={() => <NewCategory{
+        {/* <Switch>
+          <Route exact path="/" component={Welcome} /> }
+          <Route exact path="/category/new" render={() => <NewCategory{
             ...{setCategories}
            } /> } 
-           /> */}
-        </Switch>
+           />
+        </Switch> */}
 
         <Switch>
           <Route exact path="/expenses" component={Expenses} />
+          <Route exact path ="/login" component={Login} />
+          <Route exact path ="/register" component={Register} />
         </Switch>
       </Router>
     </div>
