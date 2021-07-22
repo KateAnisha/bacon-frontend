@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import '../components/assets/css/main.css';
 
 export default class Registration extends Component {
     constructor(props) {
@@ -27,7 +28,7 @@ export default class Registration extends Component {
     render() {
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit} className="main-form">
                     <input 
                         type="email" 
                         name="email" 

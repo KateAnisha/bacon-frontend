@@ -1,5 +1,6 @@
 import {useState} from "react";
 
+
 export default function Login(props) {
     const [errorMessage, setErrorMessage] = useState()
     const [email, setEmail] = useState("")
@@ -16,14 +17,13 @@ export default function Login(props) {
             {errorMessage && <h4 style={{ color: "red" }}>{errorMessage}</h4>}
             <form onSubmit={submit}>
                 <div>
-                    <label>Email: </label>
-                    <input onChange={(e) => setEmail(e.target.value)} value={email} />
+                    <input placeholder="Email" onChange={(e) => setEmail(e.target.value)} value={email} />
                 </div>
                 <div>
-                    <label>Password: </label>
-                    <input type="password" onChange={(e) => setPassword(e.target.value)} value={password} />
+                    <input placeholder="Password" type="password" onChange={(e) => setPassword(e.target.value)} value={password} />
                 </div>
                 <button type="submit">Login</button>
+                <p>Don't have an account? Register now</p>
             </form>
         </>
     )
