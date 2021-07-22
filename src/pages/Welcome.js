@@ -1,12 +1,15 @@
 import React from 'react'
+import '../components/assets/css/style.css';
 
 function Welcome() {
     return (
-        <div>
+        <>
             <h1>Login/register page</h1>
-            <button>Login</button>
-            <button>Register</button>
+            <div className="welcome-btn">
+                <button>Login</button>
+                <button>Register</button>
         </div>
+        </>
     )
 }
 

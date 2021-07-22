@@ -1,14 +1,14 @@
 import React, {useState} from 'react'
 
-export default function NewCategory({setCategory}) {
+export default function NewCategory({categories, setCategories}) {
     const [categoryName, setCategoryName] = useState("")
     const handleSubmit = (event) => {
         event.preventDefault() 
         const CreateNewCategory = {
-            categoryName: categoryName
+            name: categoryName
         }
-        setCategoryName(CreateNewCategory)
-        console.log(categoryName)
+        setCategories([...categories, CreateNewCategory])
+        console.log(categories)
     }
     return (
         <>
@@ -18,6 +18,8 @@ export default function NewCategory({setCategory}) {
                 <input value={categoryName} onChange={event => setCategoryName(event.target.value)}/>
             <button>Submit</button>
             </form>
+
+            
 
         </>
     )

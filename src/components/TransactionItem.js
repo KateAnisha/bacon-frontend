@@ -16,6 +16,8 @@ function TransactionItem({income, index, removeTransaction}) {
             <div className="amount">${income.amount}</div>
             <div className="date">{day + "." + month + "." + year}</div>
         </div>
+
+        
     )
 }
 
