@@ -28,6 +28,7 @@ export default class Registration extends Component {
     render() {
         return (
             <div>
+                <h1>Register</h1>
                 <form onSubmit={this.handleSubmit} className="main-form">
                     <input 
                         type="email" 
@@ -53,6 +54,7 @@ export default class Registration extends Component {
 
                     <button type="submit">Register</button>
                 </form>
+                <p>Already have an account? Login now</p>
             </div>
         )
     }

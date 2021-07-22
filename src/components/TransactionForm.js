@@ -1,4 +1,6 @@
 import React, {useRef} from 'react';
+import '../components/assets/css/style.css';
+
 
 function TransactionForm({income, setIncome}) {
     const description = useRef(null);
@@ -23,11 +25,11 @@ function TransactionForm({income, setIncome}) {
     }
 
     return (
-        <form className="income-form" onSubmit={AddIncome}>
+        <form className="transaction-form" onSubmit={AddIncome}>
             <input type="text" name="transaction-description" id="transaction-description" placeholder="Description" ref={description}/>
             <input type="decimal" name="amount" id="amount" placeholder="Amount" ref={amount}/>
             <input type="date" name="date" id="date" placeholder="date" ref={date}/>
-            <input type="submit" value="Add transaction"/>
+            <input type="submit" value="Add transaction" id="submit-btn"/>
         </form>
         
     )

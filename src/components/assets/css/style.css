@@ -67,3 +67,51 @@ h1 {
     letter-spacing: 2px;
 }
 
+.transaction-form > input{
+    border-radius: 25px;
+    background-color: #EDEDED;
+    border: 3px solid #ededed;
+    height: 24px;
+    width: 180px;
+    margin: 10px 0 15px 0;
+    padding: 4px 4px;
+    
+}
+::placeholder:focus{
+    /* color: red; */
+}
+
+.transaction-form > input[type=submit] {
+    color:#fff; 
+    background-color: #32B2A8;
+    border: 0px;
+    cursor: pointer;
+    border: 2px solid;
+    height: 34px;
+
+}
+
+#submit-btn:hover {
+    color:#0c9186; 
+    background-color: #fff;
+    border: 0px;
+    border: 2px solid #32B2A8;
+
+}
+input:focus {
+    border-radius: 25px;
+    border: 2px solid #32b2a7;
+    
+}
+
+.content-wrapper {
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+.display-transactions {
+    background-color: #ededed;
+    border-radius: 25px;
+    height: 400px;
+}
+
