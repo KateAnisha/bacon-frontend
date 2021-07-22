@@ -29,6 +29,11 @@ function TransactionForm({income, setIncome}) {
             <input type="text" name="transaction-description" id="transaction-description" placeholder="Description" ref={description}/>
             <input type="decimal" name="amount" id="amount" placeholder="Amount" ref={amount}/>
             <input type="date" name="date" id="date" placeholder="date" ref={date}/>
+            <datalist id="categories">
+                <option value="food">Food</option>
+                <option value="travel">Travel</option>
+                <option value="health">Health</option>
+            </datalist>
             <input type="submit" value="Add transaction" id="submit-btn"/>
         </form>
         
