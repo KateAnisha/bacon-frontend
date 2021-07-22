@@ -1,0 +1,27 @@
+.app-logo {
+    width: 420px;
+    height: auto;
+    
+}
+
+.main-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: url('city-bg.svg') no-repeat;
+    background-size:contain;
+    background-position: bottom;
+    background: cover;
+}
+
+.left, .right {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

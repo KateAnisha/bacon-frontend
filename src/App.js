@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="App">
       <div className="header"> 
-        <img src={appLogo} alt="Application Logo" className="app-logo"/>
+        {/* <img src={appLogo} alt="Application Logo" className="app-logo"/> */}
       </div>
 
       <div className="main-content">
@@ -28,9 +28,9 @@ function App() {
 
       <Router>
       {/* Once user logged in, show main nav */}
-      <div className="main-nav">
+      {/* <div className="main-nav">
         <MainNav />
-      </div>
+      </div> */}
         {/* <Switch>
           <Route exact path="/" component={Welcome} /> }
           <Route exact path="/category/new" render={() => <NewCategory{

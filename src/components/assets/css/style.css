@@ -11,11 +11,7 @@
     align-items: center;
 }
 
-.app-logo {
-    width: 220px;
-    height: auto;
-    
-}
+
 
 .main-nav {
     display: flex;
@@ -68,7 +64,3 @@ h1, h2, p {
     font-family: Helvetica, Arial;
 }
 
-.main-form {
-    display: flex;
-    flex-direction: column;
-}
