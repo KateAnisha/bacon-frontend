@@ -1,0 +1,24 @@
+.home-wrapper {
+    display: grid;
+    
+    height: 300px;
+    grid-template-columns: 2fr 2fr 1fr;
+    gap: 2em;
+    
+}
+
+.home-content, .charts {
+    border-radius: 20px;
+    background-color: #ededed;
+}
+
+.nested {
+    display: grid;
+    grid-template-rows: 3fr;
+    gap: 2em;
+}
+
+.charts {
+    grid-column: 1/3;
+    border: 3px solid red;
+}
