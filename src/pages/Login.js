@@ -8,7 +8,17 @@ export default function Login(props) {
 
     const submit = async (event) => {
         event.preventDefault()
-        
+        const user = {email, password}
+        const res = await fetch(`${process.env.REACT_APP_API_ENDPOINT}login`, {
+            method: "POST",
+            body: JSON.stringify(user),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        console.log(res.status)
+        const data = await res.json()
+        console.log(data)
     }
 
     return (
