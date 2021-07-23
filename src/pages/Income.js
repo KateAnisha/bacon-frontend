@@ -1,10 +1,12 @@
 import React from 'react'
+import Transactions from '../components/Transactions'
 
 function Income() {
     return (
-        <div>
-            <h1>Income</h1>
-        </div>
+        <>  
+            <Transactions />
+            {/* <AddTransactionForm /> */}
+        </>
     )
 }
 

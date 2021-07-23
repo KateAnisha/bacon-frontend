@@ -5,6 +5,7 @@ import React, {useState} from 'react';
 import Login from './pages/Login';
 import MainNav from './components/MainNav';
 import Welcome from './pages/Welcome';
+import Income from './pages/Income'
 import Expenses from './pages/Expenses';
 import Register from './pages/Register';
 import NewCategory from './components/NewCategory';
@@ -44,6 +45,7 @@ function App() {
           <Route exact path="/expenses" component={Expenses} />
           <Route exact path ="/login" component={Login} />
           <Route exact path ="/register" component={Register} />
+          <Route exact path="/income" component={Income} />
         </Switch>
       </Router>
     </div>
