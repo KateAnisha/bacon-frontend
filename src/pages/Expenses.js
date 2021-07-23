@@ -18,13 +18,23 @@ function Expenses() {
     }, [income]);
     
     return ( 
-        <div>
-        <h1>expense</h1>
-                <Header totalIncome={totalIncome} />
-                <TransactionForm income={income} setIncome={setIncome}/>
-                <ListTransactions income={income} setIncome={setIncome}/>
-                {/* <TransactionItem income={income} /> */}
-        </div>
+        <>
+            <div className="content-wrapper">
+                <div className="display-transactions">
+                    <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis consequatur cum placeat odio exercitationem, modi, pariatur tenetur officia ad dolore sunt a accusamus laboriosam, omnis perspiciatis impedit distinctio eos provident!
+                    </p>
+                </div>
+
+                <div className="transaction-form">
+                <h2>expense</h2>
+                        <Header totalIncome={totalIncome} />
+                        <TransactionForm income={income} setIncome={setIncome}/>
+                        <ListTransactions income={income} setIncome={setIncome}/>
+                        {/* <TransactionItem income={income} /> */}
+                </div>
+            </div>
+        </>
        
     )
 }

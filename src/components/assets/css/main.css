@@ -5,7 +5,7 @@
 }
 
 .welcome-btn{ 
-    margin-top: -120px;
+    margin-top: -120px !important;
 }
 
 .main-form {
@@ -13,7 +13,7 @@
     flex-direction: column;
 
 }
-input {
+.main-form > input {
     border-radius: 25px;
     border: 3px solid #60ACA5;
     height: 30px;
@@ -23,11 +23,11 @@ input {
     
 }
 
-::placeholder:focus{
+/* ::placeholder:focus{
     color: red;
-}
+} */
 
-input:focus {
+.main-form > input:focus {
     border-radius: 25px;
     border: 3px solid #707070;
     

@@ -9,6 +9,8 @@ import Income from './pages/Income'
 import Expenses from './pages/Expenses';
 import Register from './pages/Register';
 import NewCategory from './components/NewCategory';
+import Home from './pages/Home';
+// import './components/assets/css/style.css';
 import './components/assets/css/style.css';
 // import appLogo from './components/assets/images/Logo-final.svg'
 
@@ -24,6 +26,7 @@ function App() {
 
       {/* <div className="main-content"> */}
         <Welcome />
+        <Home />
         {/* <Registration /> */}
         {/* <NewCategory /> */}
       {/* </div> */}

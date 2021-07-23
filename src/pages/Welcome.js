@@ -1,6 +1,6 @@
 import React from 'react'
-import '../components/assets/css/style.css';
-import '../components/assets/css/main.css';
+// import '../components/assets/css/style.css';
+// import '../components/assets/css/main.css';
 // import { Link } from 'react-router-dom'
 import appLogo from '../components/assets/images/Logo-final.svg'
 // import cityBg from '../components/assets/city-bg.svg'
