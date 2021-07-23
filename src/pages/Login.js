@@ -1,14 +1,31 @@
-import {useState} from "react";
+import { useState } from "react"
 import '../components/assets/css/main.css';
 
 
-export default function Login(props) {
+export default function Login({setCookie, setIsLoggedIn}) {
     const [errorMessage, setErrorMessage] = useState()
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
 
     const submit = async (event) => {
         event.preventDefault()
+        const user = { email, password }
+        const res = await fetch(`${process.env.REACT_APP_API_ENDPOINT}login`, {
+            method: "POST",
+            body: JSON.stringify(user),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        const data = await res.json()
+       if (res.status === 201) {
+            setCookie("token", data.token, {
+                path: "/"
+            })
+            setIsLoggedIn(true)
+       } else {
+            setErrorMessage(data.error)
+       }
         
     }
 
