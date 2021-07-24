@@ -1,6 +1,9 @@
 import React, {useState} from 'react'
+import {useCookies } from 'react-cookie'
 
 export default function NewCategory({categories, setCategories}) {
+    const [cookies] = useCookies(["token"])
+
     const [categoryName, setCategoryName] = useState("")
     const handleSubmit = (event) => {
         event.preventDefault() 
@@ -18,9 +21,14 @@ export default function NewCategory({categories, setCategories}) {
                 <input value={categoryName} onChange={event => setCategoryName(event.target.value)}/>
             <button>Submit</button>
             </form>
-
-            
-
         </>
     )
-}
+} 
+
+
+
+
+
+
+
+
