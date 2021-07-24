@@ -2,21 +2,23 @@ import React from 'react'
 import '../components/assets/css/home.css';
 
 
+import IncomeTransactions from '../components/IncomeTransactions'
+import ExpenseTransactions from '../components/ExpenseTransactions'
+
+import '../components/assets/css/home.css'
+
+
 function Home() {
     return (
         <>
             <h1> App home page </h1>
             <div className="home-wrapper">
                 <div className="home-content">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam perferendis dolorum incidunt non et, accusamus, praesentium voluptates nam, in veritatis optio. Ipsa eveniet obcaecati id, non nesciunt corrupti commodi assumenda.
-                    </p>
+                    <IncomeTransactions />
                 </div>
                 
                 <div className="home-content">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam perferendis dolorum incidunt non et, accusamus, praesentium voluptates nam, in veritatis optio. Ipsa eveniet obcaecati id, non nesciunt corrupti commodi assumenda.
-                    </p>
+                    <ExpenseTransactions />
                 </div>
 
                 <div className="home-content">

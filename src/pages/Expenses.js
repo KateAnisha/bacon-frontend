@@ -1,8 +1,7 @@
 // import React from 'react';
 import React, {useState, useEffect} from 'react';
 import TransactionForm from '../components/TransactionForm';
-import ListTransactions from '../components/ListTransactions';
-import TransactionItem from '../components/TransactionItem';
+// import ExpenseTransactions from '../components/ExpenseTransactions'
 import Header from '../components/Header';
 
 function Expenses() {
@@ -30,7 +29,7 @@ function Expenses() {
                 <h2>expense</h2>
                         <Header totalIncome={totalIncome} />
                         <TransactionForm income={income} setIncome={setIncome}/>
-                        <ListTransactions income={income} setIncome={setIncome}/>
+                        {/* <ExpenseTransactions income={income} setIncome={setIncome}/> */}
                         {/* <TransactionItem income={income} /> */}
                 </div>
             </div>
