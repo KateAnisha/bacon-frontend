@@ -61,16 +61,16 @@ function TransactionForm({type}) {
     //     amount.current.value = null;
     //     date.current.value = null;
     // }
-    const filtered_categories = categories.filter(category => category.type === "expense").map(category => 
+    const filtered_categories = categories.filter(category => category.type === type).map(category => 
         <option key={category.id} value={category.id}>
             {category.description}
         </option>
     )
-
+    const title = type.charAt(0).toUpperCase() + type.substr(1)
 
     return (
         <>
-            <h2>{type}</h2>
+            <h2>{title}</h2>
             {errorMessage && <h4 style={{ color: "red" }}>{errorMessage}</h4>}
             {/* {console.log(categories)} */}
             <form className="transaction-form" onSubmit={submit}>

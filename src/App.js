@@ -90,10 +90,10 @@ function App() {
             <Router>
               <Header />
               <MainNav />
-              
+
               <Switch>
                 <Route exact path="/" component={Home} />
-                {/* <Route exact path="/income" component={Income} /> */}
+                <Route exact path="/income" component={Income} />
                 <Route exact path="/expenses" component={Expenses} />
                 {/* <Route exact path="/dashboard" component={Charts} /> */}
               </Switch>
