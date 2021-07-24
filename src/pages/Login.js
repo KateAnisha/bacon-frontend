@@ -1,11 +1,15 @@
 import { useState } from "react"
+import { useContext } from 'react'
+import { stateContext } from '../stateReducer'
+
 import '../components/assets/css/main.css';
 
 
-export default function Login({setCookie, setIsLoggedIn}) {
+export default function Login({cookies, setCookie}) {
     const [errorMessage, setErrorMessage] = useState()
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const { dispatch } = useContext(stateContext)
 
     const submit = async (event) => {
         event.preventDefault()
@@ -22,7 +26,10 @@ export default function Login({setCookie, setIsLoggedIn}) {
             setCookie("token", data.token, {
                 path: "/"
             })
-            setIsLoggedIn(true)
+            dispatch({
+                type: "setToken",
+                token: cookies.token,
+              })
        } else {
             setErrorMessage(data.error)
        }

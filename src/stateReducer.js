@@ -16,6 +16,13 @@ export default function stateReducer (currentState, action) {
             }
         }
 
+        case "setToken": {
+            return {
+                ...currentState,
+                token: action.token
+            }
+        }
+
         default:
             return currentState
     }

@@ -20,11 +20,11 @@ function App() {
   const [store, dispatch] = useReducer(stateReducer, {
     categories: [],
     transactions: [],
-    budget: 0
+    budget: 0,
+    token: ""
   })
 
   useEffect(async () => {
-    if (isLoggedIn === false) return
     const res = await fetch(`${process.env.REACT_APP_API_ENDPOINT}user/transactions`, {
       headers: {
         "Authorization": `Bearer ${cookies.token}`
@@ -39,10 +39,9 @@ function App() {
     } else {
       removeCookie("token")
     }
-  }, [isLoggedIn])
+  }, [store.token])
 
   useEffect(async () => {
-    if (isLoggedIn === false) return
     const res = await fetch(`${process.env.REACT_APP_API_ENDPOINT}user/categories`, {
       headers: {
         "Authorization": `Bearer ${cookies.token}`
@@ -57,10 +56,9 @@ function App() {
     } else {
       removeCookie("token")
     }
-  }, [isLoggedIn])
+  }, [store.token])
 
   useEffect(async () => {
-    if (isLoggedIn === false) return
     const res = await fetch(`${process.env.REACT_APP_API_ENDPOINT}user/budget`, {
       headers: {
         "Authorization": `Bearer ${cookies.token}`
@@ -75,7 +73,7 @@ function App() {
     } else {
       removeCookie("token")
     }
-  }, [isLoggedIn])
+  }, [store.token])
 
   return (
     <stateContext.Provider value={{ ...store, dispatch }}>
@@ -95,7 +93,7 @@ function App() {
             </Switch>
           </Router>
         </div> : 
-        <Login setCookie={setCookie} setIsLoggedIn={setIsLoggedIn} />
+        <Login cookies={cookies} setCookie={setCookie} setIsLoggedIn={setIsLoggedIn} />
       }
     </stateContext.Provider>
   )
