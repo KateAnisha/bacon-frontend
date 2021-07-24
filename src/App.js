@@ -15,8 +15,8 @@ import './components/assets/css/style.css'
 
 
 function App() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false)
-  const [cookies, setCookie, removeCookie] = useCookies(["token"])
+  // const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [cookies, setCookie, removeCookie] = useCookies(['token'])
   const [store, dispatch] = useReducer(stateReducer, {
     categories: [],
     transactions: [],
@@ -24,7 +24,12 @@ function App() {
     token: ""
   })
 
+  function setTokenCookie(token) {
+    setCookie('token', token, { path: '/' } )
+  }
+  
   useEffect(async () => {
+    if (!cookies.token) return
     const res = await fetch(`${process.env.REACT_APP_API_ENDPOINT}user/transactions`, {
       headers: {
         "Authorization": `Bearer ${cookies.token}`
@@ -42,6 +47,7 @@ function App() {
   }, [store.token])
 
   useEffect(async () => {
+    if (!cookies.token) return
     const res = await fetch(`${process.env.REACT_APP_API_ENDPOINT}user/categories`, {
       headers: {
         "Authorization": `Bearer ${cookies.token}`
@@ -59,6 +65,7 @@ function App() {
   }, [store.token])
 
   useEffect(async () => {
+    if (!cookies.token) return
     const res = await fetch(`${process.env.REACT_APP_API_ENDPOINT}user/budget`, {
       headers: {
         "Authorization": `Bearer ${cookies.token}`
@@ -78,22 +85,21 @@ function App() {
   return (
     <stateContext.Provider value={{ ...store, dispatch }}>
       {
-      cookies.token ? 
-        <div className="App">
-        {/* {console.log(store.transactions)}
-        {console.log(store.categories)} */}
-          <Router>
-            <Header />
-            <MainNav />
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route exact path="/income" component={Income} />
-              <Route exact path="/expenses" component={Expenses} />
-              <Route exact path="/dashboard" component={Charts} />
-            </Switch>
-          </Router>
-        </div> : 
-        <Login cookies={cookies} setCookie={setCookie} setIsLoggedIn={setIsLoggedIn} />
+        cookies.token ? 
+          <div className="App">
+            <Router>
+              <Header />
+              <MainNav />
+              
+              <Switch>
+                <Route exact path="/" component={Home} />
+                {/* <Route exact path="/income" component={Income} /> */}
+                <Route exact path="/expenses" component={Expenses} />
+                {/* <Route exact path="/dashboard" component={Charts} /> */}
+              </Switch>
+            </Router>
+          </div> : 
+        <Login cookies={cookies} setTokenCookie={setTokenCookie} />
       }
     </stateContext.Provider>
   )

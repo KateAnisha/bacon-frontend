@@ -1,31 +1,45 @@
 import React from 'react'
 import { useContext } from 'react'
 import { stateContext } from '../stateReducer'
+import { useCookies } from 'react-cookie'
 
-function IncomeTransactions({type}) {
-    const { transactions } = useContext(stateContext)
-    console.log(transactions)
-    // const removeTransaction = i => {
-    //     let temp = income.filter((v, index) => index != i);
-    //     setIncome(temp);
-    // }
-    // const sortByDate = (a, b) => {
-    //     return a.date - b.date;
-        
-    // }
-    const income_transactions = transactions.filter(transaction => transaction.type == type).map(transaction => 
+
+function Transactions({type}) {
+    const [cookies] = useCookies(["token"])
+    const { transactions, dispatch } = useContext(stateContext)
+    
+    async function deleteTransaction(id) {
+        // console.log(cookies.token)
+        const res = await fetch(`${process.env.REACT_APP_API_ENDPOINT}user/transactions/${id}`, {
+            method: "DELETE",
+            headers: {
+                "Authorization": `Bearer ${cookies.token}`
+            }
+        })
+        const updated_transactions = transactions.filter(transaction => transaction.id !== id)
+        if (res.status === 204) {
+            dispatch({
+              type: "setTransactions",
+              transactions: updated_transactions,
+            })
+        }
+    }
+
+    const filtered_transactions = transactions.filter(transaction => transaction.type === type).map(transaction => 
         <div key={transaction.id}>
             <p>{transaction.category}</p>
             <p>{transaction.description}</p>
             <p>{transaction.date}</p>
             <p>${transaction.amount}</p>
+            <button>Update</button>
+            <button onClick={() => deleteTransaction(transaction.id)}>Delete</button>
         </div>
     )
     return (
         <div className="transaction-listing">
-           {income_transactions}
+           {filtered_transactions}
         </div>
     )
 }
 
-export default IncomeTransactions;
+export default Transactions;

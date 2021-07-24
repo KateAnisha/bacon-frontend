@@ -5,7 +5,7 @@ import { stateContext } from '../stateReducer'
 import '../components/assets/css/main.css';
 
 
-export default function Login({cookies, setCookie}) {
+export default function Login({cookies, setTokenCookie}) {
     const [errorMessage, setErrorMessage] = useState()
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
@@ -23,13 +23,12 @@ export default function Login({cookies, setCookie}) {
         })
         const data = await res.json()
        if (res.status === 201) {
-            setCookie("token", data.token, {
-                path: "/"
-            })
+            setTokenCookie(data.token)
+            console.log(cookies.token)
             dispatch({
                 type: "setToken",
-                token: cookies.token,
-              })
+                token: data.token
+            })
        } else {
             setErrorMessage(data.error)
        }

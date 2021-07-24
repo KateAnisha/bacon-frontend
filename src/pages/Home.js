@@ -1,9 +1,7 @@
 import React from 'react'
 import '../components/assets/css/home.css';
 
-
 import Transactions from '../components/Transactions'
-import ExpenseTransactions from '../components/ExpenseTransactions'
 
 import '../components/assets/css/home.css'
 
