@@ -3,8 +3,7 @@ import '../components/assets/css/home.css';
 import NewCategory from '../components/NewCategory'
 
 
-import IncomeTransactions from '../components/IncomeTransactions'
-import ExpenseTransactions from '../components/ExpenseTransactions'
+import Transactions from '../components/Transactions'
 
 import '../components/assets/css/home.css'
 
@@ -15,11 +14,11 @@ function Home() {
             <h1> App home page </h1>
             <div className="home-wrapper">
                 <div className="home-content">
-                    <IncomeTransactions />
+                    <Transactions type={"income"} />
                 </div>
                 
                 <div className="home-content">
-                    <ExpenseTransactions />
+                    <Transactions type={"expense"} />
                 </div>
 
                 <div className="home-content">
