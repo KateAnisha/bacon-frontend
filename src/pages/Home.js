@@ -1,5 +1,9 @@
 import React from 'react'
-import '../components/assets/css/home.css';
+
+import IncomeTransactions from '../components/IncomeTransactions'
+import ExpenseTransactions from '../components/ExpenseTransactions'
+
+import '../components/assets/css/home.css'
 
 
 function Home() {
@@ -8,11 +12,11 @@ function Home() {
             <h1> App home page </h1>
             <div className="home-wrapper">
                 <div className="home-content">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam perferendis dolorum incidunt non et, accusamus, praesentium voluptates nam, in veritatis optio. Ipsa eveniet obcaecati id, non nesciunt corrupti commodi assumenda.
+                    <IncomeTransactions />
                 </div>
                 
                 <div className="home-content">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, ab dolores? Asperiores ipsam dolorem exercitationem quidem fugiat, expedita deleniti ex aperiam deserunt saepe minus, maxime optio atque tempora beatae ducimus?
+                    <ExpenseTransactions />
                 </div>
 
                 <div className="home-content">
