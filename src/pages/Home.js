@@ -1,4 +1,6 @@
 import React from 'react'
+import '../components/assets/css/home.css';
+
 
 import IncomeTransactions from '../components/IncomeTransactions'
 import ExpenseTransactions from '../components/ExpenseTransactions'
@@ -21,14 +23,24 @@ function Home() {
 
                 <div className="home-content">
                     <div className="nested">
-                        <div className="sub-menu">Manage Budget</div>
-                        <div className="sub-menu">Manage Accounts</div>
-                        <div className="sub-menu">User Settings</div>
+                        <div className="container">
+                            <div className="sub-menu">Manage Budget</div> <div className="arrow"></div>
+                        </div>
+
+                        <div className="container">
+                            <div className="sub-menu">Manage Categories</div> <div className="arrow"></div>
+                        </div>
+
+                        <div className="container">
+                            <div className="sub-menu">User Settings</div> <div className="arrow"></div>
+                        </div>
                     </div>
                 </div>
 
                 <div className="charts">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque, ab dolores? Asperiores ipsam dolorem exercitationem quidem fugiat, expedita deleniti ex aperiam deserunt saepe minus, maxime optio atque tempora beatae ducimus?
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam perferendis dolorum incidunt non et, accusamus, praesentium voluptates nam, in veritatis optio. Ipsa eveniet obcaecati id, non nesciunt corrupti commodi assumenda.
+                    </p>
                 </div>
             </div>
         </>
