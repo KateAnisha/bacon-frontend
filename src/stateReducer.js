@@ -23,6 +23,13 @@ export default function stateReducer (currentState, action) {
             }
         }
 
+        case "addTransaction": {
+            return {
+                ...currentState,
+                transactions: [action.data, ...currentState.transactions]
+            }
+        }
+
         default:
             return currentState
     }
