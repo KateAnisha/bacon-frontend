@@ -23,7 +23,7 @@ function Expenses() {
                 </div>
                 <div className="transaction-form">
                     {/* <Header totalIncome={totalIncome} /> */}
-                    <TransactionForm type={"Expense"} />
+                    <TransactionForm type={"expense"} />
                     {/* <ExpenseTransactions income={income} setIncome={setIncome}/> */}
                     {/* <TransactionItem income={income} /> */}
                 </div>

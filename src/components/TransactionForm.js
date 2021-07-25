@@ -6,7 +6,7 @@ import { useCookies } from 'react-cookie'
 import '../components/assets/css/style.css';
 
 
-function TransactionForm({type}) {
+export default function TransactionForm({type}) {
     const [errorMessage, setErrorMessage] = useState()
     const [cookies] = useCookies(['token'])
     const [description, setDescription] = useState("")
@@ -98,15 +98,5 @@ function TransactionForm({type}) {
     )
 
 }
-export default TransactionForm
 
 
-// async function updateTransaction(id) {
-//     const res = await fetch(`${process.env.REACT_APP_API_ENDPOINT}user/transactions/${id}`, {
-//         method: "PUT",
-//         headers: {
-//             "Authorization": `Bearer ${cookies.token}`,
-//             "Content-Type": "application/json"
-//         }
-//     })
-// }
