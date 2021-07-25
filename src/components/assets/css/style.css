@@ -11,10 +11,9 @@
     grid-template-areas: 
         "header header header header"
         "nav expenses income sub-menu"
-        "nav charts charts charts"
+        "nav charts charts sub-menu"
     ;
-    /* row-gap: 0.2rem; */
-    /* column-gap: 1.4rem; */
+
 }
 
 /* HEADER */
@@ -26,6 +25,8 @@ header {
     /* display: flex;
     align-items: center; */
     grid-area: header;
+    display: flex;
+    justify-content: space-between;
 }
 
 /* MAIN NAVIGATION */
@@ -36,10 +37,13 @@ nav {
     width: 120px;
     height: 100vh;
     display: flex;
-    justify-content: center;
-    /* align-items: space-around; */
-    align-content: space-evenly;
+    flex-direction: column;
+  
+    align-content: center;
+    align-items: center;
 }
+
+
 
 li {
     padding-bottom: 42px;
@@ -53,6 +57,7 @@ li {
 
 ul {
     list-style: none;
+   
 }
 
 /* HOME PAGE SUB-MENU */

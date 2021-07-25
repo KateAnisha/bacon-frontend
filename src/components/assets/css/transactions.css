@@ -1,0 +1,10 @@
+
+
+
+.full-transaction {
+    grid-area: transaction;
+}
+
+.add-transaction {
+    grid-area: sub-menu;
+} 

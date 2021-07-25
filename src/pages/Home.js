@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 import Transactions from '../components/Transactions'
 
 import '../components/assets/css/style.css'
-import '../components/assets/css/main.css'
+// import '../components/assets/css/main.css'
 
 
 function Home() {
