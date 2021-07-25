@@ -28,6 +28,10 @@ function App() {
   function setTokenCookie(token) {
     setCookie('token', token, { path: '/' } )
   }
+
+  function setUserIdCookie(user_id) {
+    setCookie('user_id', user_id, { path: '/' } )
+  }
   
   useEffect(async () => {
     if (!cookies.token) return
@@ -102,7 +106,7 @@ function App() {
               </Switch>
             </Router>
           </div> : 
-        <Login cookies={cookies} setTokenCookie={setTokenCookie} />
+        <Login cookies={cookies} setTokenCookie={setTokenCookie} setUserIdCookie={setUserIdCookie} />
       }
     </stateContext.Provider>
   )
