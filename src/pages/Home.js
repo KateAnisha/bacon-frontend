@@ -1,6 +1,7 @@
 import React from 'react'
 import '../components/assets/css/home.css';
 import NewCategory from '../components/NewCategory'
+import { Link } from "react-router-dom"
 
 import Transactions from '../components/Transactions'
 
@@ -32,6 +33,9 @@ function Home() {
                         <div className="container">
                             <div className="sub-menu">Manage Categories</div> <div className="arrow"></div>
                             <NewCategory />
+                        </div>
+                        <div>
+                            <Link to="/categories">View Categories</Link>
                         </div>
 
                         <div className="container">

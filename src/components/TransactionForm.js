@@ -6,7 +6,7 @@ import { useCookies } from 'react-cookie'
 import '../components/assets/css/style.css';
 
 
-function TransactionForm({type}) {
+export default function TransactionForm({type}) {
     const [errorMessage, setErrorMessage] = useState()
     const [cookies] = useCookies(['token'])
     const [description, setDescription] = useState("")
@@ -61,16 +61,16 @@ function TransactionForm({type}) {
     //     amount.current.value = null;
     //     date.current.value = null;
     // }
-    const filtered_categories = categories.filter(category => category.type === "expense").map(category => 
+    const filtered_categories = categories.filter(category => category.type === type).map(category => 
         <option key={category.id} value={category.id}>
             {category.description}
         </option>
     )
-
+    const title = type.charAt(0).toUpperCase() + type.substr(1)
 
     return (
         <>
-            <h2>{type}</h2>
+            <h2>{title}</h2>
             {errorMessage && <h4 style={{ color: "red" }}>{errorMessage}</h4>}
             {/* {console.log(categories)} */}
             <form className="transaction-form" onSubmit={submit}>
@@ -98,15 +98,5 @@ function TransactionForm({type}) {
     )
 
 }
-export default TransactionForm
 
 
-// async function updateTransaction(id) {
-//     const res = await fetch(`${process.env.REACT_APP_API_ENDPOINT}user/transactions/${id}`, {
-//         method: "PUT",
-//         headers: {
-//             "Authorization": `Bearer ${cookies.token}`,
-//             "Content-Type": "application/json"
-//         }
-//     })
-// }

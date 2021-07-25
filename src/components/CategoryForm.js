@@ -4,6 +4,7 @@ import {useCookies } from 'react-cookie'
 export default function NewCategory({categories, setCategories}) {
     const [cookies] = useCookies(["token"])
 
+export default function CategoryForm({categories, setCategories}) {
     const [categoryName, setCategoryName] = useState("")
     const handleSubmit = (event) => {
         event.preventDefault() 
