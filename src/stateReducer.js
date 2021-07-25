@@ -16,17 +16,17 @@ export default function stateReducer (currentState, action) {
             }
         }
 
+        case "setBudget": {
+            return {
+                ...currentState,
+                budget: action.budget
+            }
+        }
+
         case "setToken": {
             return {
                 ...currentState,
                 token: action.token
-            }
-        }
-
-        case "setUserId": {
-            return {
-                ...currentState,
-                user_id: action.user_id
             }
         }
 

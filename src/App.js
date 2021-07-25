@@ -13,11 +13,12 @@ import Charts from './pages/Charts'
 import Categories from './components/Categories'
 
 import './components/assets/css/style.css'
+import BudgetForm from './components/BudgetForm'
 
 
 function App() {
   // const [isLoggedIn, setIsLoggedIn] = useState(false)
-  const [cookies, setCookie, removeCookie] = useCookies(['token', 'user_id'])
+  const [cookies, setCookie, removeCookie] = useCookies(['token'])
   const [store, dispatch] = useReducer(stateReducer, {
     categories: [],
     transactions: [],
@@ -29,10 +30,6 @@ function App() {
     setCookie('token', token, { path: '/' } )
   }
 
-  function setUserIdCookie(user_id) {
-    setCookie('user_id', user_id, { path: '/' } )
-  }
-  
   useEffect(async () => {
     if (!cookies.token) return
     const res = await fetch(`${process.env.REACT_APP_API_ENDPOINT}user/transactions`, {
@@ -101,12 +98,14 @@ function App() {
                 <Route exact path="/income" component={Income} />
                 <Route exact path="/expenses" component={Expenses} />
                 <Route exact path="/categories" component={Categories} />
+                <Route exact path="/budget" component={BudgetForm} />
+
 
                 {/* <Route exact path="/dashboard" component={Charts} /> */}
               </Switch>
             </Router>
           </div> : 
-        <Login cookies={cookies} setTokenCookie={setTokenCookie} setUserIdCookie={setUserIdCookie} />
+        <Login cookies={cookies} setTokenCookie={setTokenCookie} />
       }
     </stateContext.Provider>
   )

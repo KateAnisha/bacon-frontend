@@ -25,6 +25,10 @@ function Home() {
                             <div className="sub-menu">Manage Budget</div> <div className="arrow"></div>
                         </div>
 
+                        <div>
+                            <Link to="/budget">Update budget</Link>
+                        </div>
+
                         <div className="container">
                             <div className="sub-menu">Manage Categories</div> <div className="arrow"></div>
                         </div>
