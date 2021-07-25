@@ -4,15 +4,10 @@ import stateReducer, { stateContext } from './stateReducer'
 import { useCookies } from 'react-cookie'
 import { Redirect } from "react-router-dom"
 
-<<<<<<< HEAD
 
 import Welcome from './pages/Welcome'
 import Entrance from './pages/Entrance'
 import Register from './pages/Register'
-=======
-import Welcome from './pages/Welcome'
-// import Register from './pages/Register'
->>>>>>> d308ef199b3bf953aeabc1d06f98de08f35b856f
 import Login from './pages/Login'
 import Home from './pages/Home'
 import Header from './components/Header'
@@ -21,7 +16,6 @@ import Income from './pages/Income'
 import Expenses from './pages/Expenses'
 import Charts from './pages/Charts'
 import Categories from './components/Categories'
-
 import './components/assets/css/style.css'
 import BudgetForm from './components/BudgetForm'
 
