@@ -6,20 +6,21 @@ import { Link } from "react-router-dom"
 import Transactions from '../components/Transactions'
 
 import '../components/assets/css/style.css'
+import '../components/assets/css/main.css'
 
 
 function Home() {
     return (
         <>
-            <h1> App home page </h1>
+            
             {/* <div className="home-wrapper"> */}
                 <div className="recent-income">
-                    <h1>Recent Income</h1>
+                    <h2>Recent Income</h2>
                     <Transactions type={"income"} />
                 </div>
                 
                 <div className="recent-expense">
-                    <h1>Recent Expenses</h1>
+                    <h2>Recent Expenses</h2>
                     <Transactions type={"expense"} />
                 </div>
 

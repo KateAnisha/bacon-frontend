@@ -1,4 +1,4 @@
-/*
+/* 
 .app-logo {
     width: 420px;
     height: auto;
@@ -27,6 +27,10 @@
 /* ::placeholder:focus{
     color: red;
 } 
+
+*/
+
+/*
 
 .main-form > input:focus {
     border-radius: 25px;
@@ -68,13 +72,13 @@
     left: 25px;
 }
 
-/* .transaction-btn {
+.transaction-btn {
     border: none;
     width: 20px;
-} 
+}  
 
 .transaction-listing {
-    /* flex-direction: column;
+    flex-direction: column;
     justify-content: space-between !important; */
     /* flex-wrap: wrap; */
     /* position: relative; */
@@ -95,7 +99,5 @@
     width: 120px;
     /* width: 100%; 
 } 
-
-
 */
 

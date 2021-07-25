@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from "react-router-dom"
-import '../components/assets/css/mainnav.css';
+import '../components/assets/css/style.css';
 import Home from '../components/assets/images/link-img/home.svg'
 import Income from '../components/assets/images/link-img/income.svg'
 import Chart from '../components/assets/images/link-img/chart.svg'
