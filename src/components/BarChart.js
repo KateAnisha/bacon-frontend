@@ -7,7 +7,17 @@ export default function BarChart() {
     const { transactions } = useContext(stateContext)
     const [options, setOptions] = useState({
         chart: {id: "basic-bar"},
-        xaxis: {categories: []}
+        xaxis: {categories: []},
+        yaxis: [
+            {
+              labels: {
+                formatter: function(val) {
+                  return val.toFixed(0);
+                }
+              }
+            }
+          ],
+        fill: {colors: ['#F44336', '#E91E63', '#9C27B0']}
     })
     const [series, setSeries] = useState([
         {name: "series-1", data: []}
@@ -15,8 +25,8 @@ export default function BarChart() {
     // new Array with category description of current month and only expense
     
     useEffect(() => {
-        const current_month = new Date().getMonth()
-        const current_month_transactions = transactions.filter(transaction => transaction.date.split("-")[1] == current_month + 1)
+        const current_month_index = new Date().getMonth()
+        const current_month_transactions = transactions.filter(transaction => transaction.date.split("-")[1] == current_month_index + 1)
         let current_month_categories = []
         for (let i=0; i<current_month_transactions.length; i++) {
             if (current_month_transactions[i].type == "expense" && !current_month_categories.includes(current_month_transactions[i].category)) {
@@ -35,7 +45,17 @@ export default function BarChart() {
         }
         setOptions({
             chart: {id: "basic-bar"},
-            xaxis: {categories: current_month_categories}
+            xaxis: {categories: current_month_categories},
+            yaxis: [
+                {
+                  labels: {
+                    formatter: function(val) {
+                      return val.toFixed(0);
+                    }
+                  }
+                }
+              ],
+            fill: {colors: ['#32B2A7']}
         })
         setSeries([
             {name: "series-1", data: current_month_category_totals}

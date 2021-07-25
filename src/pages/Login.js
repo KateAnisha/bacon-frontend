@@ -6,6 +6,8 @@ import { useCookies } from 'react-cookie'
 import { useHistory } from "react-router-dom"
 
 import '../components/assets/css/main.css';
+import appLogo from '../components/assets/images/Logo-final.svg'
+import pigImg from '../components/assets/images/login-piggy.svg'
 
 
 export default function Login() {
@@ -42,14 +44,20 @@ export default function Login() {
     }
 
     return (
-        <div className="right">
-            {errorMessage && <h4 style={{ color: "red" }}>{errorMessage}</h4>}
-            <form onSubmit={submit} className="main-form">
-                <input placeholder="Email" onChange={(e) => setEmail(e.target.value)} value={email} />
-                <input placeholder="Password" type="password" onChange={(e) => setPassword(e.target.value)} value={password} />
-                <button type="submit">Login</button>
-                <p>Don't have an account? <Link to="/register">Register</Link> now</p>
-            </form>
-        </div> 
+        <div className="wrapper">
+            <img src={pigImg} alt="Piggybank Icon" className="pig-img"/>
+            <div className="left">
+                <img src={appLogo} alt="Application Logo" className="app-logo"/>
+            </div>
+            <div className="right">
+                {errorMessage && <h4 style={{ color: "red" }}>{errorMessage}</h4>}
+                <form onSubmit={submit} className="main-form">
+                    <input placeholder="Email" onChange={(e) => setEmail(e.target.value)} value={email} />
+                    <input placeholder="Password" type="password" onChange={(e) => setPassword(e.target.value)} value={password} />
+                    <button type="submit">Login</button>
+                    <p>Don't have an account? <Link to="/register">Register</Link> now</p>
+                </form>
+            </div> 
+        </div>
     )
 }
