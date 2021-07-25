@@ -95,7 +95,7 @@ function App() {
             <Router>
               <Header />
               <MainNav />
-
+              
               <Switch>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/income" component={Income} />

@@ -3,29 +3,62 @@
     padding: 0;
 }
 
+.app {
+    display: grid !important;
+    height: 100vh;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: .5fr 1fr 1fr;
+    grid-template-areas: 
+        "header header header header"
+        "nav expenses income submenu"
+        "nav charts charts charts"
+    ;
+}
+
 header {
     background-color: #ededed;
     width: 100%;
     height: 136px;
-    display: flex;
-    align-items: center;
+    /* display: flex;
+    align-items: center; */
+    grid-area: header;
 }
 
-.main-nav {
-    display: flex;
+nav {
+    grid-area: nav;
+    /* display: flex;
     background-color: #ededed;
     width: 80px;
     height: 100%;
-    z-index: 1; 
+    z-index: 1;  */
+    width: 120px;
+    height: 100vh;
 }
 
+.sub-menu {
+    grid-area: submenu;
+}
+
+.recent-expense {
+    grid-area: expenses;
+}
+
+.recent-income {
+    grid-area: income;
+}
+
+.charts {
+    grid-area: charts;
+}
+
+/*
 .main-content {
     padding-left: 120px;
 }
 
 
 .welcome-btn {
-    /* margin: auto; */
+    /* margin: auto; 
     display: flex;
     flex-direction: column;
     margin-top: 15px;
@@ -77,7 +110,7 @@ h1 {
     
 }
 ::placeholder:focus{
-    /* color: red; */
+    /* color: red; 
 }
 
 .transaction-form > input[type=submit] {
@@ -114,3 +147,5 @@ input:focus {
     height: 400px;
 }
 
+
+*/
