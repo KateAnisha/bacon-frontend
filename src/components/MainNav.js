@@ -10,7 +10,7 @@ function MainNav() {
         <li><Link to="/income">Income</Link></li>
         <li><Link to="/charts">Charts</Link></li>
       </ul>
-  </nav>
+    </nav>
   )
 }
 
