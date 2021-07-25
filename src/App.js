@@ -17,7 +17,7 @@ import './components/assets/css/style.css'
 
 function App() {
   // const [isLoggedIn, setIsLoggedIn] = useState(false)
-  const [cookies, setCookie, removeCookie] = useCookies(['token'])
+  const [cookies, setCookie, removeCookie] = useCookies(['token', 'user_id'])
   const [store, dispatch] = useReducer(stateReducer, {
     categories: [],
     transactions: [],
@@ -27,6 +27,10 @@ function App() {
 
   function setTokenCookie(token) {
     setCookie('token', token, { path: '/' } )
+  }
+
+  function setUserIdCookie(user_id) {
+    setCookie('user_id', user_id, { path: '/' } )
   }
   
   useEffect(async () => {
@@ -102,7 +106,7 @@ function App() {
               </Switch>
             </Router>
           </div> : 
-        <Login cookies={cookies} setTokenCookie={setTokenCookie} />
+        <Login cookies={cookies} setTokenCookie={setTokenCookie} setUserIdCookie={setUserIdCookie} />
       }
     </stateContext.Provider>
   )

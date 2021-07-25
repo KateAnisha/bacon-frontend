@@ -1,6 +1,6 @@
 import React from 'react'
 import '../components/assets/css/home.css';
-import NewCategory from '../components/NewCategory'
+import CategoryForm from '../components/CategoryForm'
 import { Link } from "react-router-dom"
 
 import Transactions from '../components/Transactions'
@@ -21,7 +21,7 @@ function Home() {
                     <Transactions type={"expense"} />
                 </div>
 
-                <NewCategory />
+                <CategoryForm />
 
 
                 {/* <div className="home-content">
