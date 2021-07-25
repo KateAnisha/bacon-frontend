@@ -2,7 +2,10 @@ import React from 'react'
 import { useContext } from 'react'
 import { stateContext } from '../stateReducer'
 import { useCookies } from 'react-cookie'
+<<<<<<< HEAD
 import CategoryForm from './CategoryForm'
+=======
+>>>>>>> 737d747ab240090f1329a286ef476a5bfb96d05f
 
 
 export default function Categories() {
@@ -71,6 +74,7 @@ export default function Categories() {
     return (
         <div className="transaction-listing">
            <div>
+<<<<<<< HEAD
                <h3>Income categories</h3>
                {income_categories}
            </div>
@@ -79,6 +83,13 @@ export default function Categories() {
                {expense_categories}
            </div>
            <CategoryForm />
+=======
+               {income_categories}
+           </div>
+           <div>
+               {expense_categories}
+           </div>
+>>>>>>> 737d747ab240090f1329a286ef476a5bfb96d05f
         </div>
     )
 }
