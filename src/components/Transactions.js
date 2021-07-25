@@ -7,6 +7,28 @@ import { useCookies } from 'react-cookie'
 function Transactions({type}) {
     const [cookies] = useCookies(["token"])
     const { transactions, dispatch } = useContext(stateContext)
+
+    async function updateTransaction(id) {
+        // event.preventDefault()
+        // const transaction = { description: description, amount: amount, date: date, category_id: category }
+        const res = await fetch(`${process.env.REACT_APP_API_ENDPOINT}user/transactions/${id}`, {
+            method: "PUT",
+            // body: JSON.stringify(transaction),
+            headers: {
+                "Authorization": `Bearer ${cookies.token}`,
+                "Content-Type": "application/json"
+            }
+        })
+        const data = res.json()
+        if (res.status === 200) {
+            const updated_transaction_index = transactions.findIndex(transaction => transaction.id === id)
+            transactions[updated_transaction_index] = data 
+            dispatch({
+              type: "setTransactions",
+              transactions: transactions,
+            })
+        }
+    }
     
     async function deleteTransaction(id) {
         // console.log(cookies.token)

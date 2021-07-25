@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-export default function NewCategory({categories, setCategories}) {
+export default function CategoryForm({categories, setCategories}) {
     const [categoryName, setCategoryName] = useState("")
     const handleSubmit = (event) => {
         event.preventDefault() 
