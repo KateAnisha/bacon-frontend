@@ -80,7 +80,7 @@ export default function TransactionForm({type}) {
                 </select>
                 <input type="text" value={description} name="description" placeholder="Description" onChange={(e) => setDescription(e.target.value)} />
                 <input type="date" value={date} name="date" placeholder="Date" onChange={(e) => setDate(e.target.value)} />
-                <input type="text" value={amount} name="amount" placeholder="Amount" onChange={(e) => setAmount(e.target.value)} />
+                <input type="number" step="0.01" value={amount} name="amount" placeholder="Amount" onChange={(e) => setAmount(e.target.value)} />
                 <input type="submit" value="Add transaction" id="submit-btn" />
 
 

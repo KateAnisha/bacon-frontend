@@ -2,6 +2,7 @@ import React from 'react'
 import { useContext } from 'react'
 import { stateContext } from '../stateReducer'
 import { useCookies } from 'react-cookie'
+import CategoryForm from './CategoryForm'
 
 
 export default function Categories() {
@@ -70,11 +71,14 @@ export default function Categories() {
     return (
         <div className="transaction-listing">
            <div>
+               <h3>Income categories</h3>
                {income_categories}
            </div>
            <div>
+           <h3>Expense categories</h3>
                {expense_categories}
            </div>
+           <CategoryForm />
         </div>
     )
 }

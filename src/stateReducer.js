@@ -23,10 +23,24 @@ export default function stateReducer (currentState, action) {
             }
         }
 
+        case "setUserId": {
+            return {
+                ...currentState,
+                user_id: action.user_id
+            }
+        }
+
         case "addTransaction": {
             return {
                 ...currentState,
                 transactions: [action.data, ...currentState.transactions]
+            }
+        }
+        
+        case "addCategory": {
+            return {
+                ...currentState,
+                categories: [action.data, ...currentState.categories]
             }
         }
 
