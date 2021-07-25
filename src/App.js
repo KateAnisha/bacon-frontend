@@ -105,7 +105,7 @@ function App() {
               </Switch>
             </Router>
           </div> : 
-        <Login cookies={cookies} setTokenCookie={setTokenCookie} />
+        <Login cookies={cookies} setTokenCookie={setTokenCookie} setUserIdCookie={setUserIdCookie} />
       }
     </stateContext.Provider>
   )
