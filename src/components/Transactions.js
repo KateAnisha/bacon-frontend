@@ -26,13 +26,17 @@ function Transactions({type}) {
     }
 
     const filtered_transactions = transactions.filter(transaction => transaction.type === type).map(transaction => 
-        <div key={transaction.id}>
-            <p>{transaction.category}</p>
-            <p>{transaction.description}</p>
-            <p>{transaction.date}</p>
-            <p>${transaction.amount}</p>
-            <button>Update</button>
-            <button onClick={() => deleteTransaction(transaction.id)}>Delete</button>
+        <div key={transaction.id} className="transaction-listing">
+            <div className="tr">
+                <div className="show-transactions"> 
+                    <p>{transaction.category}</p>
+                </div>
+                <div className="show-transactions"> <p>{transaction.description}</p></div>
+                <div className="show-transactions"> <p>{transaction.date}</p></div>
+                <div className="show-transactions"> <p>${transaction.amount}</p></div>
+                <div className="show-transactions"> <button className="transaction-btn">Edit</button></div>
+                <div className="show-transactions"> <button  className="transaction-btn" onClick={() => deleteTransaction(transaction.id)}>Delete</button></div>
+            </div>
         </div>
     )
     return (

@@ -17,10 +17,10 @@ function Welcome() {
                 <div className="right">
                     <div className="welcome-btn">
                         <a href="/login">
-                            <button>Login</button>
+                            <button className="main-btn">Login</button>
                         </a>
                         <a href="register">
-                            <button>Register</button>
+                            <button className="main-btn">Register</button>
                         </a>
                     </div>
                 </div>

@@ -2,7 +2,6 @@ import React from 'react'
 import '../components/assets/css/home.css';
 import NewCategory from '../components/NewCategory'
 
-
 import Transactions from '../components/Transactions'
 
 import '../components/assets/css/home.css'
@@ -21,7 +20,10 @@ function Home() {
                     <Transactions type={"expense"} />
                 </div>
 
-                <div className="home-content">
+                <NewCategory />
+
+
+                {/* <div className="home-content">
                     <div className="nested">
                         <div className="container">
                             <div className="sub-menu">Manage Budget</div> <div className="arrow"></div>
@@ -36,7 +38,7 @@ function Home() {
                             <div className="sub-menu">User Settings</div> <div className="arrow"></div>
                         </div>
                     </div>
-                </div>
+                </div> */}
 
                 <div className="charts">
                     <p>

@@ -5,6 +5,7 @@ import { stateContext } from '../stateReducer'
 import '../components/assets/css/main.css';
 
 
+
 export default function Login({cookies, setTokenCookie}) {
     const [errorMessage, setErrorMessage] = useState()
     const [email, setEmail] = useState("")
@@ -48,6 +49,7 @@ export default function Login({cookies, setTokenCookie}) {
                 <button type="submit">Login</button>
                 <p>Don't have an account? Register now</p>
             </form>
+
         </>
     )
 }
