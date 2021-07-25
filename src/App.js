@@ -3,6 +3,8 @@ import React, { useState, useEffect, useReducer } from 'react'
 import stateReducer, { stateContext } from './stateReducer'
 import { useCookies } from 'react-cookie'
 
+import Welcome from './pages/Welcome'
+// import Register from './pages/Register'
 import Login from './pages/Login'
 import Home from './pages/Home'
 import Header from './components/Header'
@@ -92,20 +94,17 @@ function App() {
             <Router>
               <Header />
               <MainNav />
-
               <Switch>
                 <Route exact path="/" component={Home} />
                 <Route exact path="/income" component={Income} />
                 <Route exact path="/expenses" component={Expenses} />
                 <Route exact path="/categories" component={Categories} />
                 <Route exact path="/budget" component={BudgetForm} />
-
-
                 {/* <Route exact path="/dashboard" component={Charts} /> */}
               </Switch>
             </Router>
           </div> : 
-        <Login cookies={cookies} setTokenCookie={setTokenCookie} setUserIdCookie={setUserIdCookie} />
+        <Welcome />
       }
     </stateContext.Provider>
   )

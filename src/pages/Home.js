@@ -2,11 +2,12 @@ import React from 'react'
 import { Link } from "react-router-dom"
 
 import Transactions from '../components/Transactions'
+import BarChart from '../components/BarChart'
 
 import '../components/assets/css/home.css'
 
 
-function Home() {
+export default function Home() {
     return (
         <>
             <h1> App home page </h1>
@@ -43,13 +44,9 @@ function Home() {
                 </div>
 
                 <div className="charts">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam perferendis dolorum incidunt non et, accusamus, praesentium voluptates nam, in veritatis optio. Ipsa eveniet obcaecati id, non nesciunt corrupti commodi assumenda.
-                    </p>
+                    <BarChart />
                 </div>
             </div>
         </>
     )
 }
-
-export default Home
