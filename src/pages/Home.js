@@ -13,11 +13,11 @@ export default function Home() {
             <h1> App home page </h1>
             <div className="home-wrapper">
                 <div className="home-content">
-                    <Transactions type={"income"} />
+                    <Transactions type={"income"} limit={5} />
                 </div>
                 
                 <div className="home-content">
-                    <Transactions type={"expense"} />
+                    <Transactions type={"expense"} limit={5} />
                 </div>
 
                 <div className="home-content">

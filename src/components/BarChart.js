@@ -17,7 +17,7 @@ export default function BarChart() {
               }
             }
           ],
-        fill: {colors: ['#F44336', '#E91E63', '#9C27B0']}
+        fill: {colors: ['#32B2A7']}
     })
     const [series, setSeries] = useState([
         {name: "series-1", data: []}

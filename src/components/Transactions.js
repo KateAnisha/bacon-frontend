@@ -4,7 +4,7 @@ import { stateContext } from '../stateReducer'
 import { useCookies } from 'react-cookie'
 
 
-function Transactions({type}) {
+function Transactions({type, limit}) {
     const [cookies] = useCookies(["token"])
     const { transactions, dispatch } = useContext(stateContext)
 
@@ -46,8 +46,8 @@ function Transactions({type}) {
             })
         }
     }
-
-    const filtered_transactions = transactions.filter(transaction => transaction.type === type).map(transaction => 
+    
+    const filtered_transactions = transactions.filter(transaction => transaction.type === type).slice(0, limit).map(transaction => 
         <div key={transaction.id}>
             <p>{transaction.category}</p>
             <p>{transaction.description}</p>

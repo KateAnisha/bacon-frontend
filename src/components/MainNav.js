@@ -8,7 +8,7 @@ function MainNav() {
         <li><Link to="/">Home</Link></li>
         <li><Link to="/expenses">Expenses</Link></li>
         <li><Link to="/income">Income</Link></li>
-        <li><Link to="/charts">Charts</Link></li>
+        <li><Link to="/dashboard">Dashboard</Link></li>
       </ul>
     </nav>
   )

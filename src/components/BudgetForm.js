@@ -27,7 +27,7 @@ export default function BudgetForm() {
               type: "setBudget",
               budget: updatedBudget,
             })
-            setUpdatedBudget("")
+            console.log(budget)
         }
     }
 
