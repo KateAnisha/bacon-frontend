@@ -17,7 +17,7 @@ import './components/assets/css/style.css'
 
 function App() {
   // const [isLoggedIn, setIsLoggedIn] = useState(false)
-  const [cookies, setCookie, removeCookie] = useCookies(['token'])
+  const [cookies, setCookie, removeCookie] = useCookies(['token', 'user_id'])
   const [store, dispatch] = useReducer(stateReducer, {
     categories: [],
     transactions: [],

@@ -28,6 +28,10 @@ export default function Login({cookies, setTokenCookie}) {
                 type: "setToken",
                 token: data.token
             })
+            dispatch({
+                type: "setUserId",
+                user_id: data.user_id
+            })
        } else {
             setErrorMessage(data.error)
        }
