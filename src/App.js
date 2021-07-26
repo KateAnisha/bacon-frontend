@@ -90,87 +90,35 @@ function App() {
 
   return (
     <stateContext.Provider value={{ ...store, dispatch }}>
-      {
-        cookies.token ? 
-          <div className="App">
-            <Router>
-              <Header />
-              <MainNav />
-              <Switch>
-                <Route exact path="/" component={Home} />
-                <Route exact path="/income" component={Income} />
-                <Route exact path="/expenses" component={Expenses} />
-                <Route exact path="/dashboard" component={Dashboard} />
-                <Route exact path="/categories" component={Categories} />
-                <Route exact path="/budget" component={BudgetForm} />
-                {/* <Route exact path="/dashboard" component={Charts} /> */}
-              </Switch>
-            </Router>
-          </div> : 
-          <Router>
+      <div className="App">
+        <Router>
+          { store.token ? 
+            <>
+            <Header />
+            <MainNav />
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/income" component={Income} />
+              <Route exact path="/expenses" component={Expenses} />
+              <Route exact path="/dashboard" component={Dashboard} />
+              <Route exact path="/categories" component={Categories} />
+              <Route exact path="/budget" component={BudgetForm} />
+              {/* <Route exact path="/dashboard" component={Charts} /> */}
+            </Switch>
+            </> :
+            <>
             <Redirect to="/entrance" />
             <Switch>
               <Route exact path="/entrance" component={Entrance} />
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
             </Switch>
-          </Router>
-        
-      }
+            </>
+          }
+        </Router>
+      </div>
     </stateContext.Provider>
   )
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // const [categories, setCategories] = useState([])
-  // return (
-  //   <div className="App">
-  //     {/* <div className="header">  */}
-  //       {/* <img src={appLogo} alt="Application Logo" className="app-logo"/> */}
-  //     {/* </div> */}
-
-  //     {/* <div className="main-content"> */}
-  //       <Welcome />
-  //       <Home />
-  //       {/* <Registration /> */}
-  //       {/* <NewCategory /> */}
-  //     {/* </div> */}
-
-  //     <Router>
-  //     {/* Once user logged in, show main nav */}
-  //     {/* <div className="main-nav">
-  //       <MainNav />
-  //     </div> */}
-  //       {/* <Switch>
-  //         <Route exact path="/" component={Welcome} /> }
-  //         <Route exact path="/category/new" render={() => <NewCategory{
-  //           ...{setCategories}
-  //          } /> } 
-  //          />
-  //       </Switch> */}
-
-  //       <Switch>
-  //         <Route exact path="/expenses" component={Expenses} />
-  //         <Route exact path ="/login" component={Login} />
-  //         <Route exact path ="/register" component={Register} />
-  //         <Route exact path="/income" component={Income} />
-  //       </Switch>
-  //     </Router>
-  //   </div>
-  // );
 }
 
 export default App;
