@@ -16,10 +16,12 @@ export default function Home() {
             <h1> App home page </h1>
             
                 <div className="recent-income">
+                    <h2>Recent Income</h2>
                     <Transactions type={"income"} limit={5} />
                 </div>
                 
                 <div className="recent-expense">
+                <h2>Recent Expenses</h2>
                     <Transactions type={"expense"} limit={5} />
                 </div>
 

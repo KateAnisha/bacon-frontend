@@ -11,10 +11,10 @@ function MainNav() {
   return (
     <nav>
       <ul>
-        <li><Link to="/"><img src={Home} alt="Home Icon" className="nav-icon"/></Link></li>
-        <li><Link to="/expenses"><img src={Expenses} alt="Chart Icon" className="nav-icon"/></Link></li>
-        <li><Link to="/income"><img src={Income} alt="Chart Icon" className="nav-icon"/></Link></li>
-        <li><Link to="/dashboard"><img src={Chart} alt="Chart Icon" className="nav-icon"/></Link></li>
+        <li><Link to="/"><img id="home" src={Home} alt="Home Icon" className="nav-icon"/></Link></li>
+        <li><Link to="/expenses"><img id="expenses" src={Expenses} alt="Chart Icon" className="nav-icon"/></Link></li>
+        <li><Link to="/income"><img id="income" src={Income} alt="Chart Icon" className="nav-icon"/></Link></li>
+        <li><Link to="/dashboard"><img id="dashboard" src={Chart} alt="Chart Icon" className="nav-icon"/></Link></li>
         {/* <li><Link to="/">Home</Link></li>
         <li><Link to="/expenses">Expenses</Link></li>
         <li><Link to="/income">Income</Link></li>

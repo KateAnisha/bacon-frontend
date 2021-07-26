@@ -63,15 +63,15 @@ function Transactions({type, limit}) {
                     <p>${transaction.amount}</p>
                 </div>
                 <div className="show-transactions">
-                    <button>Edit</button>
-                    <button onClick={() => deleteTransaction(transaction.id)}>Delete</button>
+                    <button id="edit">Edit</button>
+                    <button id="delete" onClick={() => deleteTransaction(transaction.id)}>Delete</button>
                 </div>
                
             </div>
         </div>
     )
     return (
-        <div className="transaction-listing">
+        <div id="transactions" className="transaction-listing">
            {filtered_transactions}
         </div>
     )
