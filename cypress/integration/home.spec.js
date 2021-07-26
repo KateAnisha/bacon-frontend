@@ -9,11 +9,8 @@
             { "id":22,"description":"milk","amount":"3.5","date":"2021-07-06","category":"food","type":"expense"},
             {"id":33,"description":"pizza","amount":"10.5","date":"2021-07-13","category":"food","type":"expense"},
             {"id":44,"description":"flower","amount":"20.0","date":"2021-07-21","category":"gifts","type":"expense"},
-            {"id":55,"description":"july 2021","amount":"1040.0","date":"2021-07-02","category":"employment","type":"income"},
-            {"id":66,"description":"potato bank june 2021","amount":"140.0","date":"2021-06-21","category":"investment","type":"income"},
-            {"id":77,"description":"Translink","amount":"50.0","date":"2021-07-25","category":"transportation2","type":"expense"},
-            {"id":88,"description":"Netflix","amount":"12.99","date":"2021-07-25","category":"Entertainment","type":"expense"},
-            {"id":99,"description":"DisneyPlus","amount":"13.0","date":"2021-07-13","category":"Entertainment","type":"expense"}]
+            {"id":55,"description":"july 2021","amount":"1040.0","date":"2021-07-02","category":"employment","type":"income"}]
+  
     })
 
     cy.intercept("http://localhost:5000/api/v1/user/categories", {

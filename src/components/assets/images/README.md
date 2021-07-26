@@ -299,27 +299,29 @@ To handle the back end of our application, we chose to use Rails, a library buil
 
 Lastly, our application also uses APEX Charts. APEX Charts is a library that allows us to display data in a variety of different charts. APEX Charts is customizable and allows us to choose from a range of charts (pie, graph etc) and even allows us to use different graphs simultaneously to show the user a clear distinction between the graphs. Lastly, APEX Charts is responsive for a variety of mobile devices (Malek, 2020). We chose to use APEX charts to provide the user with visual feedback about their spending habits. 
 
-For front end testing we chose to use Cypress. The reason we chose Cypress for our front end testing is because it is a pure JavaScript-based testing tool which we thought would work seamlessly with React, a JavaScript framework. 
+For front end testing we chose to use Cypress. The reason we chose Cypress for our front end testing, because it is a pure JavaScript-based testing tool which we thought would work seamlessly with React, a JavaScript framework. To test our backend we chose to use RSpec. Rspec also works seamlessly with Ruby which assists a Test Driven Development approach to coding more productive. This was also used as well as Shoulda Matchers, a gem that allows us to run one line tests on the functionality of Rails. The benefit of Shoulda Matches also reduces the amount of errors in a test and size of the tests if they were to be written manually. 
 
+Rack-cors was used to assist with Cross-Origin Resource Sharing. By using this gem we were able to make cross domain AJAX calls between our front end deployment platform (Netlify) and backend platform (Heroku). The benefit of using Rack-cors is so that we don't have to use a different workaround such as JSONP. 
+
+
+rack-cors - handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
+database_cleaner-active_record - clean records created for testing
+bcrypt - for encrypting password
+Shoulda Matchers
 
 ### task delegation methodology
-Prior to starting the web application, we held and initial meeting wherein we discussed each others strengths and weaknesses. As Kate had experience with graphic design and designing to websites, we decided that she would handle the front end. Noe's skills were also in the front end however, we compromised and decided that he would handle the back-end and also assist with front end. Noe also had experience with adding charts to applications and he was keen to implement similar features into our web application. 
+Prior to starting the web application, we held and initial meeting where we discussed each others strengths and weaknesses. As Kate had experience with graphic design and designing to websites, we decided that she would handle the front end. Noe's skills were also in the front end however, we compromised and decided that he would handle the back-end and also assist with front end. Noe also had experience with adding charts to applications and he was keen to implement similar features into our web application. 
 
-During the initial meeting we discussed the application requirements, which included an overview of the user stories and an assessment of each team members skills. We began the project by utilising [Trello](https://trello.com/b/RkPGYQV5/kate-noe). From here we entered in each task, using the labels to group each task into the following categories
+During the initial meeting we discussed the application requirements, which included an overview of the user stories and an assessment of each team members skills. We began the project by utilising [Trello](https://trello.com/b/RkPGYQV5/kate-noe). From here we entered in each task, using the labels to group each task into one of the following categories:-
 1. Urgent and important;
 1. Urgent and unimportant;
 1. Non-urgent and unimportant; 
 
-We also assigned a user to each card, so we were aware of which team member was responsible for each task at all times. In addition to assigning a card to a user, we also used deadlines and checklists to keep each team member on track. When choosing an appropriate team member for each task, we considered which person would be the best for the task and what task would be appealing to the individual. 
+We also used one of trellos features wherre we could assign a user to each card, so we were aware of which team member was responsible for and which task at all times. In addition to assigning a card to a user, we also used deadlines and checklists to keep each team member on track. When choosing an appropriate team member for each task, we considered which person would be the best for the task, whether their skills aligned with the task and what task would be appealing to the individual. For each task we then set realistic, specific goals that, as mentioned above, had a completion due date. 
 
-For each task we then set realistic, specific goals that, as mentioned above, had a completion due date. 
+Once we mutually agreed on a clear direction for our web application and prior to commencing each task, we got together each day and held daily sprint planning meetings. This was conducted to make sure that each team member was aware of their objectives for that day, that each team member was aware of what they needed to do within the deadline. These meetings also acted as an opportunity for us to ask the other questions or help if needed. We also kept track of each others progress and kept each other accountable with informal discussions throughout the day. Once a task was completed, it then went to the other team-member for review. If the task was implementation of a feature, we used Git's source control to compare and check each others work. 
 
-Prior to commencing each task, we had daily sprint planning meetings. This was conducted to make sure that each team member was aware of their objectives for that day and to raise any questions if need be. We also kept track of each others progress with informal discussions during the day. 
-
-Once a task was completed, it then went to the other team-member for review. 
-
-#### Minor changes to application
-We encountered some minor 
+We made some minor changes to our application towards the end. We decided that the users budget would initially be set to 0. Initially our buttons on hover would be a lighter teal however we both decided it was more aesthetically pleasing if the border stayed teal but the inside went to white. This was more in line with our overall theme and gave the buttons a more modern look and feel. We also decided to include edit and delete buttons alongside each transaction on the home page, income and expenses page. This is so the user would be able to quickly amend a transaction if needed and delete one if it was made in error. 
 
 
 ### R10	A link (URL) to your deployed website
