@@ -5,7 +5,6 @@ import { useCookies } from 'react-cookie'
 import { Redirect } from "react-router-dom"
 
 
-import Welcome from './pages/Welcome'
 import Entrance from './pages/Entrance'
 import Register from './pages/Register'
 import Login from './pages/Login'
@@ -16,8 +15,12 @@ import Income from './pages/Income'
 import Expenses from './pages/Expenses'
 import Dashboard from './pages/Dashboard'
 import Categories from './components/Categories'
-import './components/assets/css/style.css'
 import BudgetForm from './components/BudgetForm'
+import CreateCategory from './components/CreateCategory'
+import UpdateCategory from './components/UpdateCategory'
+import UpdateTransaction from './components/UpdateTransaction'
+
+import './components/assets/css/style.css'
 
 
 function App() {
@@ -92,7 +95,7 @@ function App() {
     <stateContext.Provider value={{ ...store, dispatch }}>
       <div className="App">
         <Router>
-          { store.token ? 
+          { cookies.token ? 
             <>
             <Header />
             <MainNav />
@@ -102,6 +105,8 @@ function App() {
               <Route exact path="/expenses" component={Expenses} />
               <Route exact path="/dashboard" component={Dashboard} />
               <Route exact path="/categories" component={Categories} />
+              <Route exact path="/categories/:category_id" component={UpdateCategory} />
+              <Route exact path="/transactions/:transaction_id" component={UpdateTransaction} />
               <Route exact path="/budget" component={BudgetForm} />
               {/* <Route exact path="/dashboard" component={Charts} /> */}
             </Switch>

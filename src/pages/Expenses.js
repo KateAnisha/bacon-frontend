@@ -23,12 +23,12 @@ function Expenses() {
             <div className="expenses-page">
                 <div className="display-transactions" id="full-transaction">
                 <h2>Expense transaction history</h2>
-                    <Transactions type={"expense"}/>
+                    <Transactions type={"Expense"}/>
                 </div>
 
                 <div className="transaction-form" id="add-transaction">
                     {/* <Header totalIncome={totalIncome} /> */}
-                    <TransactionForm type={"expense"} />
+                    <TransactionForm type={"Expense"} />
                     {/* <ExpenseTransactions income={income} setIncome={setIncome}/> */}
                     {/* <TransactionItem income={income} /> */}
                 </div>

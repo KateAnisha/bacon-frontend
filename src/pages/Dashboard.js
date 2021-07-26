@@ -4,10 +4,12 @@ export default function Dashboard() {
     return (
         <div>
             <div>
-                <LineChart type="income" lineColor="#32B2A7" />
+                <h2>Income</h2>
+                <LineChart type="Income" lineColor="#32B2A7" />
             </div>
             <div>
-                <LineChart type="expense" lineColor="#707070" />
+                <h2>Expense</h2>
+                <LineChart type="Expense" lineColor="#707070" />
             </div>
         </div>
         

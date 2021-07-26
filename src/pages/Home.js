@@ -1,6 +1,6 @@
 import React from 'react'
 // import '../components/assets/css/home.css';
-import CategoryForm from '../components/CategoryForm'
+import CreateCategory from '../components/CreateCategory'
 import { Link } from "react-router-dom"
 
 import Transactions from '../components/Transactions'
@@ -16,14 +16,14 @@ export default function Home() {
             <h1> App home page </h1>
             
                 <div className="recent-income">
-                    <Transactions type={"income"} limit={5} />
+                    <Transactions type={"Income"} limit={5} />
                 </div>
                 
                 <div className="recent-expense">
-                    <Transactions type={"expense"} limit={5} />
+                    <Transactions type={"Expense"} limit={5} />
                 </div>
 
-                {/* <CategoryForm /> */}
+                {/* <CreateCategory /> */}
 
 
                 <div className="sub-menu">

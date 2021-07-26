@@ -6,7 +6,7 @@ import { useCookies } from 'react-cookie'
 import '../components/assets/css/style.css';
 
 
-export default function CategoryForm() {
+export default function CreateCategory() {
     const [errorMessage, setErrorMessage] = useState()
     const [cookies] = useCookies(['token'])
     const [description, setDescription] = useState("")
@@ -73,9 +73,9 @@ export default function CategoryForm() {
             {/* {console.log(categories)} */}
             <form className="transaction-form" onSubmit={submit}>
                 <select name="type" value={type} onChange={(e) => setType(e.target.value)}>
-                    <option>Type</option>
-                    <option value="income">Income</option>
-                    <option value="expense">Expense</option>
+                    <option value="">Type</option>
+                    <option value="Income">Income</option>
+                    <option value="Expense">Expense</option>
                 </select>
                 <input type="text" value={description} name="description" placeholder="Description" onChange={(e) => setDescription(e.target.value)} />
                 <input type="submit" value="Add transaction" id="submit-btn" />
