@@ -15,6 +15,10 @@ function MainNav() {
         <li><Link to="/expenses"><img src={Expenses} alt="Chart Icon" className="nav-icon"/></Link></li>
         <li><Link to="/income"><img src={Income} alt="Chart Icon" className="nav-icon"/></Link></li>
         <li><Link to="/charts"><img src={Chart} alt="Chart Icon" className="nav-icon"/></Link></li>
+        {/* <li><Link to="/">Home</Link></li>
+        <li><Link to="/expenses">Expenses</Link></li>
+        <li><Link to="/income">Income</Link></li>
+        <li><Link to="/dashboard">Dashboard</Link></li> */}
       </ul>
     </nav>
   )

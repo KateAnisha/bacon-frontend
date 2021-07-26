@@ -13,16 +13,14 @@ import '../components/assets/css/style.css'
 export default function Home() {
     return (
         <>
-            
-            {/* <div className="home-wrapper"> */}
-                <div className="recent-income">
-                    <h2>Recent Income</h2>
-                    <Transactions type={"income"} />
+            <h1> App home page </h1>
+            <div className="home-wrapper">
+                <div className="home-content">
+                    <Transactions type={"income"} limit={5} />
                 </div>
                 
-                <div className="recent-expense">
-                    <h2>Recent Expenses</h2>
-                    <Transactions type={"expense"} />
+                <div className="home-content">
+                    <Transactions type={"expense"} limit={5} />
                 </div>
 
                 <CategoryForm />
@@ -55,7 +53,7 @@ export default function Home() {
                 <div className="charts">
                     <BarChart />
                 </div>
-            {/* </div> */}
+            </div>
         </>
     )
 }

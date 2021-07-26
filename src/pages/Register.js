@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { useContext } from 'react'
 import { stateContext } from '../stateReducer'
 import { useCookies } from 'react-cookie'
-import { useHistory } from "react-router-dom"
+import { useHistory } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
-
-
+import appLogo from '../components/assets/images/Logo-final.svg'
+import pigImg from '../components/assets/images/login-piggy.svg'
 import '../components/assets/css/main.css';
 
 export default function Register() {
@@ -46,9 +47,13 @@ export default function Register() {
     }
 
     return (
-        <div>
-            <h2>REGISTER</h2>
-            {errorMessage && <h4 style={{ color: "red" }}>{errorMessage}</h4>}
+        <div className="wrapper">
+            <img src={pigImg} alt="Piggybank Icon" className="pig-img"/>
+            <div className="left">
+                <img src={appLogo} alt="Application Logo" className="app-logo"/>
+            </div>
+            <div className="right">
+                {errorMessage && <h4 style={{ color: "red" }}>{errorMessage}</h4>}
                 <form className="" onSubmit={submit}>
                     <input type="text" value={name} name="name" placeholder="Name" onChange={(e) => setName(e.target.value)} />
                     <input type="text" value={email} name="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
@@ -56,6 +61,8 @@ export default function Register() {
                     <input type="text" value={passwordConfirm} name="passwordConfirm" placeholder="Confirm Password" onChange={(e) => setPasswordConfirm(e.target.value)} />
                     <input type="submit" value="Add transaction" id="submit-btn" />
                 </form>
+                <p>Already have an account? <Link to="/login">Log in</Link> now</p>
+            </div>
         </div>
     )
 }

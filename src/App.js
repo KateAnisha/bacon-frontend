@@ -2,18 +2,20 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import React, { useState, useEffect, useReducer } from 'react'
 import stateReducer, { stateContext } from './stateReducer'
 import { useCookies } from 'react-cookie'
+import { Redirect } from "react-router-dom"
+
 
 import Welcome from './pages/Welcome'
-// import Register from './pages/Register'
+import Entrance from './pages/Entrance'
+import Register from './pages/Register'
 import Login from './pages/Login'
 import Home from './pages/Home'
 import Header from './components/Header'
 import MainNav from './components/MainNav'
 import Income from './pages/Income'
 import Expenses from './pages/Expenses'
-import Charts from './pages/Charts'
+import Dashboard from './pages/Dashboard'
 import Categories from './components/Categories'
-
 import './components/assets/css/style.css'
 import BudgetForm from './components/BudgetForm'
 
@@ -79,7 +81,7 @@ function App() {
     if (res.status === 200) {
       dispatch({
         type: "setBudget",
-        transactions: data,
+        budget: data.amount
       })
     } else {
       removeCookie("token")
@@ -98,13 +100,22 @@ function App() {
                 <Route exact path="/" component={Home} />
                 <Route exact path="/income" component={Income} />
                 <Route exact path="/expenses" component={Expenses} />
+                <Route exact path="/dashboard" component={Dashboard} />
                 <Route exact path="/categories" component={Categories} />
                 <Route exact path="/budget" component={BudgetForm} />
                 {/* <Route exact path="/dashboard" component={Charts} /> */}
               </Switch>
             </Router>
           </div> : 
-        <Welcome />
+          <Router>
+            <Redirect to="/entrance" />
+            <Switch>
+              <Route exact path="/entrance" component={Entrance} />
+              <Route exact path="/register" component={Register} />
+              <Route exact path="/login" component={Login} />
+            </Switch>
+          </Router>
+        
       }
     </stateContext.Provider>
   )
