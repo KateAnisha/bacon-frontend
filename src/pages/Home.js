@@ -14,12 +14,12 @@ export default function Home() {
     return (
         <>
             <h1> App home page </h1>
-            <div className="home-wrapper">
-                <div className="home-content">
+            
+                <div className="recent-income">
                     <Transactions type={"income"} limit={5} />
                 </div>
                 
-                <div className="home-content">
+                <div className="recent-expense">
                     <Transactions type={"expense"} limit={5} />
                 </div>
 
@@ -52,7 +52,7 @@ export default function Home() {
                 <div className="charts">
                     <BarChart />
                 </div>
-            </div>
+            
         </>
     )
 }
