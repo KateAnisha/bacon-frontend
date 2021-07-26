@@ -1,8 +1,9 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import React, { useState, useEffect, useReducer } from 'react'
+import React, { useEffect, useReducer } from 'react'
 import stateReducer, { stateContext } from './stateReducer'
 import { useCookies } from 'react-cookie'
-import { Redirect } from "react-router-dom"
+import { Redirect } from 'react-router-dom'
+
 
 
 import Entrance from './pages/Entrance'
@@ -16,7 +17,6 @@ import Expenses from './pages/Expenses'
 import Dashboard from './pages/Dashboard'
 import Categories from './components/Categories'
 import BudgetForm from './components/BudgetForm'
-import CreateCategory from './components/CreateCategory'
 import UpdateCategory from './components/UpdateCategory'
 import UpdateTransaction from './components/UpdateTransaction'
 
@@ -24,7 +24,6 @@ import './components/assets/css/style.css'
 
 
 function App() {
-  // const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [cookies, setCookie, removeCookie] = useCookies(['token'])
   const [store, dispatch] = useReducer(stateReducer, {
     categories: [],

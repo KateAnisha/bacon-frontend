@@ -12,7 +12,7 @@ export default function UpdateCategory() {
     const history = useHistory()
     const { category_id } = useParams()
     const { categories, dispatch } = useContext(stateContext)
-    const [selectedCategory, setSelectedCategory] = useState({})
+    const [selectedCategory, setSelectedCategory] = useState(categories.find(category => category.id === category_id) ?? {})
     const [cookies, setCookie, removeCookie] = useCookies(['token'])
     const [errorMessage, setErrorMessage] = useState()
     const [description, setDescription] = useState()
@@ -37,24 +37,15 @@ export default function UpdateCategory() {
                     "Content-Type": "application/json"
                 }
             })
-            const data = res.json()
+            const data = await res.json()
             if (res.status === 200) {
                 setDescription("")
                 setType("")
-                const response = await fetch(`${process.env.REACT_APP_API_ENDPOINT}user/categories`, {
-                    headers: {
-                      "Authorization": `Bearer ${cookies.token}`
-                    }
-                  })
-                const data = await response.json()
-                if (res.status === 200) {
+                setSelectedCategory(data)
                 dispatch({
-                    type: "setCategories",
-                    categories: data,
+                    type: "updateCategories",
+                    category: data
                 })
-                } else {
-                removeCookie("token")
-                }
             } else {
                 setErrorMessage(data.error)
             }

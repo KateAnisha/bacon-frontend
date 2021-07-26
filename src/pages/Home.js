@@ -1,13 +1,10 @@
 import React from 'react'
-// import '../components/assets/css/home.css';
-import CreateCategory from '../components/CreateCategory'
 import { Link } from "react-router-dom"
 
 import Transactions from '../components/Transactions'
 import BarChart from '../components/BarChart'
 
 import '../components/assets/css/style.css'
-// import '../components/assets/css/main.css'
 
 
 export default function Home() {

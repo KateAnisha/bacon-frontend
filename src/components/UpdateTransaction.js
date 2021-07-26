@@ -13,7 +13,7 @@ export default function UpdateTransaction() {
     const [category, setCategory] = useState()
     const { transaction_id } = useParams()
     const { categories, transactions, dispatch } = useContext(stateContext)
-    const [selectedTransaction, setSelectedTransaction] = useState({})
+    const [selectedTransaction, setSelectedTransaction] = useState(transactions.find(transaction => transaction.id === transaction_id) ?? {})
     const [cookies, setCookie, removeCookie] = useCookies(['token'])
     const [errorMessage, setErrorMessage] = useState()
     const [description, setDescription] = useState()
@@ -39,25 +39,16 @@ export default function UpdateTransaction() {
                 "Content-Type": "application/json"
             }
         })
-        const data = res.json()
+        const data = await res.json()
         if (res.status === 200) {
             setDescription("")
             setDate("")
             setAmount("")
-            const response = await fetch(`${process.env.REACT_APP_API_ENDPOINT}user/transactions`, {
-                headers: {
-                    "Authorization": `Bearer ${cookies.token}`
-                }
-                })
-            const data = await response.json()
-            if (res.status === 200) {
+            setSelectedTransaction(data)
             dispatch({
-                type: "setTransactions",
-                transactions: data,
+                type: "updateTransactions",
+                transaction: data
             })
-            } else {
-            removeCookie("token")
-            }
         } else {
             setErrorMessage(data.error)
         }
