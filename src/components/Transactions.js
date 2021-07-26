@@ -46,8 +46,6 @@ function Transactions({type, limit}) {
             })
         }
     }
-
-
     
     const filtered_transactions = transactions.filter(transaction => transaction.type === type).slice(0, limit).map(transaction => 
         <div key={transaction.id} className="transaction-listing">

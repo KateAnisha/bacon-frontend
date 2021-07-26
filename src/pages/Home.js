@@ -23,7 +23,31 @@ export default function Home() {
                     <Transactions type={"expense"} limit={5} />
                 </div>
 
-                <CategoryForm />
+                {/* <CategoryForm /> */}
+
+
+                <div className="sub-menu">
+                    <div className="nested">
+                        <div className="container">
+                            <div className="sub-menu">Manage Budget</div> <div className="arrow"></div>
+                        </div>
+
+                        <div>
+                            <Link to="/budget">Update budget</Link>
+                        </div>
+
+                        <div className="container">
+                            <div className="sub-menu">Manage Categories</div> <div className="arrow"></div>
+                        </div>
+                        <div>
+                            <Link to="/categories">View Categories</Link>
+                        </div>
+
+                        <div className="container">
+                            <div className="sub-menu">User Settings</div> <div className="arrow"></div>
+                        </div>
+                    </div>
+                </div>
 
                 <div className="charts">
                     <BarChart />
