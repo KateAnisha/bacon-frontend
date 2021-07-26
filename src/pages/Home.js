@@ -1,10 +1,13 @@
 import React from 'react'
+// import '../components/assets/css/home.css';
+import CategoryForm from '../components/CategoryForm'
 import { Link } from "react-router-dom"
 
 import Transactions from '../components/Transactions'
 import BarChart from '../components/BarChart'
 
-import '../components/assets/css/home.css'
+import '../components/assets/css/style.css'
+// import '../components/assets/css/main.css'
 
 
 export default function Home() {
@@ -20,7 +23,10 @@ export default function Home() {
                     <Transactions type={"expense"} limit={5} />
                 </div>
 
-                <div className="home-content">
+                <CategoryForm />
+
+
+                {/* <div className="sub-menu">
                     <div className="nested">
                         <div className="container">
                             <div className="sub-menu">Manage Budget</div> <div className="arrow"></div>
@@ -32,6 +38,7 @@ export default function Home() {
 
                         <div className="container">
                             <div className="sub-menu">Manage Categories</div> <div className="arrow"></div>
+                            <NewCategory />
                         </div>
                         <div>
                             <Link to="/categories">View Categories</Link>
@@ -41,7 +48,7 @@ export default function Home() {
                             <div className="sub-menu">User Settings</div> <div className="arrow"></div>
                         </div>
                     </div>
-                </div>
+                </div> */}
 
                 <div className="charts">
                     <BarChart />
