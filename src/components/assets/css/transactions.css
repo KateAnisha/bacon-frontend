@@ -1,4 +1,6 @@
-
+/* .expenses-page {
+    grid-template-columns: .3fr 2fr .5fr;
+}
 
 
 .full-transaction {
@@ -7,4 +9,4 @@
 
 .add-transaction {
     grid-area: sub-menu;
-} 
+}  */

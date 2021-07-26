@@ -8,34 +8,41 @@ import '../components/assets/css/style.css';
 
 export default function CategoryForm() {
     const [errorMessage, setErrorMessage] = useState()
-    const [cookies] = useCookies(['token', 'user_id'])
+    const [cookies] = useCookies(['token'])
     const [description, setDescription] = useState("")
     const [type, setType] = useState()
     const { categories, dispatch } = useContext(stateContext)
 
     const submit = async (event) => {
         event.preventDefault()
-        console.log(cookies.user_id)
-        const cateogry = { description: description, user_id: cookies.user_id, category_type: Number(type) }
-        const res = await fetch(`${process.env.REACT_APP_API_ENDPOINT}/user/categories`, {
-            method: "POST",
-            body: JSON.stringify(cateogry),
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": `Bearer ${cookies.token}`
-            }
-        })
-        const data = await res.json()
-        if (res.status === 201) {
-            dispatch({
-                type: "addCategory",
-                data
+        // console.log(categories)
+        // console.log(type)
+        // console.log(description)
+        if (categories.find(category => category.type === type && category.description === description) === undefined) {
+            const cateogry = { description: description, category_type: type }
+            const res = await fetch(`${process.env.REACT_APP_API_ENDPOINT}/user/categories`, {
+                method: "POST",
+                body: JSON.stringify(cateogry),
+                headers: {
+                    "Content-Type": "application/json",
+                    "Authorization": `Bearer ${cookies.token}`
+                }
             })
-            setDescription("")
-            setType("")
-        } else {
+            const data = await res.json()
+            if (res.status === 201) {
+                dispatch({
+                    type: "addCategory",
+                    data
+                })
+                setDescription("")
+                setType("")
+            } else {
             setErrorMessage(data.error)
+            }
+        } else {
+            setErrorMessage("Category already exists")
         }
+        
     }
     // const description = useRef(null);
     // const date = useRef(null);
@@ -67,8 +74,8 @@ export default function CategoryForm() {
             <form className="transaction-form" onSubmit={submit}>
                 <select name="type" value={type} onChange={(e) => setType(e.target.value)}>
                     <option>Type</option>
-                    <option value="0">Income</option>
-                    <option value="1">Expense</option>
+                    <option value="income">Income</option>
+                    <option value="expense">Expense</option>
                 </select>
                 <input type="text" value={description} name="description" placeholder="Description" onChange={(e) => setDescription(e.target.value)} />
                 <input type="submit" value="Add transaction" id="submit-btn" />

@@ -4,12 +4,13 @@ import CategoryForm from '../components/CategoryForm'
 import { Link } from "react-router-dom"
 
 import Transactions from '../components/Transactions'
+import BarChart from '../components/BarChart'
 
 import '../components/assets/css/style.css'
 // import '../components/assets/css/main.css'
 
 
-function Home() {
+export default function Home() {
     return (
         <>
             
@@ -33,6 +34,10 @@ function Home() {
                             <div className="sub-menu">Manage Budget</div> <div className="arrow"></div>
                         </div>
 
+                        <div>
+                            <Link to="/budget">Update budget</Link>
+                        </div>
+
                         <div className="container">
                             <div className="sub-menu">Manage Categories</div> <div className="arrow"></div>
                             <NewCategory />
@@ -48,13 +53,9 @@ function Home() {
                 </div> */}
 
                 <div className="charts">
-                    <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam perferendis dolorum incidunt non et, accusamus, praesentium voluptates nam, in veritatis optio. Ipsa eveniet obcaecati id, non nesciunt corrupti commodi assumenda.
-                    </p>
+                    <BarChart />
                 </div>
             {/* </div> */}
         </>
     )
 }
-
-export default Home

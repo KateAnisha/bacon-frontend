@@ -20,16 +20,18 @@ function Expenses() {
     
     return ( 
         <>
-            <div className="display-transactions" id="full-transaction">
-            <h2>Expense transaction history</h2>
-                <Transactions type={"expense"}/>
-            </div>
+            <div className="expenses-page">
+                <div className="display-transactions" id="full-transaction">
+                <h2>Expense transaction history</h2>
+                    <Transactions type={"expense"}/>
+                </div>
 
-            <div className="transaction-form" id="add-transaction">
-                {/* <Header totalIncome={totalIncome} /> */}
-                <TransactionForm type={"expense"} />
-                {/* <ExpenseTransactions income={income} setIncome={setIncome}/> */}
-                {/* <TransactionItem income={income} /> */}
+                <div className="transaction-form" id="add-transaction">
+                    {/* <Header totalIncome={totalIncome} /> */}
+                    <TransactionForm type={"expense"} />
+                    {/* <ExpenseTransactions income={income} setIncome={setIncome}/> */}
+                    {/* <TransactionItem income={income} /> */}
+                </div>
             </div>
         
         </>
