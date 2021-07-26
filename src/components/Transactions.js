@@ -65,7 +65,7 @@ function Transactions({type, limit}) {
                     <p>${transaction.amount}</p>
                 </div>
                 <div className="show-transactions">
-                    <button>Update</button>
+                    <button>Edit</button>
                     <button onClick={() => deleteTransaction(transaction.id)}>Delete</button>
                 </div>
                
