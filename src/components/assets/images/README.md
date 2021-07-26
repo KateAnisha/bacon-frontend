@@ -305,11 +305,18 @@ For front end testing we chose to use Cypress. The reason we chose Cypress for o
 ### task delegation methodology
 Prior to starting the web application, we held and initial meeting wherein we discussed each others strengths and weaknesses. As Kate had experience with graphic design and designing to websites, we decided that she would handle the front end. Noe's skills were also in the front end however we compromised and decided that he would handle the back-end and also assist with front end. 
 
-During the initial meeting we discussed the application requirements, which included an overview of the user stories and an assessment of each team members skills.  
+During the initial meeting we discussed the application requirements, which included an overview of the user stories and an assessment of each team members skills. We began the project by utilising [Trello](https://trello.com/b/RkPGYQV5/kate-noe). From here we entered in each task, using the labels to group each task into the following categories
+1. Urgent and important;
+1. Urgent and unimportant;
+1. Non-urgent and unimportant; 
 
-[Trello](https://trello.com/b/RkPGYQV5/kate-noe)
-Following the due date of the documentation, on 19 July Kate and Noe began the first spring on the application. 
+We also assigned a user to each card, so we were aware of which team member was responsible for each task at all times. In addition to assigning a card to a user, we also used deadlines and checklists to keep each team member on track. When choosing an appropriate team member for each task, we considered which person would be the best for the task and what task would be appealing to the individual. 
 
+For each task we then set realistic, specific goals that, as mentioned above, had a completion due date. 
+
+Prior to commencing each task, we had daily sprint planning meetings. This was conducted to make sure that each team member was aware of their objectives for that day and to raise any questions if need be. We also kept track of each others progress with informal discussions during the day. 
+
+Once a task was completed, it then went to the other team-member for review. 
 
 #### Minor changes to application
 
