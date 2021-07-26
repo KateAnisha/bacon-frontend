@@ -46,15 +46,30 @@ function Transactions({type, limit}) {
             })
         }
     }
+
+
     
     const filtered_transactions = transactions.filter(transaction => transaction.type === type).slice(0, limit).map(transaction => 
-        <div key={transaction.id}>
-            <p>{transaction.category}</p>
-            <p>{transaction.description}</p>
-            <p>{transaction.date}</p>
-            <p>${transaction.amount}</p>
-            <button>Update</button>
-            <button onClick={() => deleteTransaction(transaction.id)}>Delete</button>
+        <div key={transaction.id} className="transaction-listing">
+            <div className="tr">
+                <div className="show-transactions">
+                    <p>{transaction.category}</p>
+                </div>
+                <div className="show-transactions">
+                    <p>{transaction.description}</p>
+                </div>
+                <div className="show-transactions">
+                    <p>{transaction.date}</p>
+                </div>
+                <div className="show-transactions">
+                    <p>${transaction.amount}</p>
+                </div>
+                <div className="show-transactions">
+                    <button>Edit</button>
+                    <button onClick={() => deleteTransaction(transaction.id)}>Delete</button>
+                </div>
+               
+            </div>
         </div>
     )
     return (
