@@ -60,5 +60,7 @@
         cy.get("#expenses").click()
         cy.get("#income").click()
         cy.get("#dashboard").click()
+        cy.get('.nested > :nth-child(2) > a').click()
+        cy.get('.nested > :nth-child(4) > a').click()
     }) 
   })

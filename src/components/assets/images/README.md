@@ -303,7 +303,7 @@ For front end testing we chose to use Cypress. The reason we chose Cypress for o
 
 
 ### task delegation methodology
-Prior to starting the web application, we held and initial meeting wherein we discussed each others strengths and weaknesses. As Kate had experience with graphic design and designing to websites, we decided that she would handle the front end. Noe's skills were also in the front end however we compromised and decided that he would handle the back-end and also assist with front end. 
+Prior to starting the web application, we held and initial meeting wherein we discussed each others strengths and weaknesses. As Kate had experience with graphic design and designing to websites, we decided that she would handle the front end. Noe's skills were also in the front end however, we compromised and decided that he would handle the back-end and also assist with front end. Noe also had experience with adding charts to applications and he was keen to implement similar features into our web application. 
 
 During the initial meeting we discussed the application requirements, which included an overview of the user stories and an assessment of each team members skills. We began the project by utilising [Trello](https://trello.com/b/RkPGYQV5/kate-noe). From here we entered in each task, using the labels to group each task into the following categories
 1. Urgent and important;
@@ -319,6 +319,7 @@ Prior to commencing each task, we had daily sprint planning meetings. This was c
 Once a task was completed, it then went to the other team-member for review. 
 
 #### Minor changes to application
+We encountered some minor 
 
 
 ### R10	A link (URL) to your deployed website
