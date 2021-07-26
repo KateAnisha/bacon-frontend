@@ -38,34 +38,27 @@
     })
 
     // Testing expense section on home page
-    it("Should get the first category of a recent expense transaction ", () => {
-        cy.get('.recent-expense > #transactions > :nth-child(1) > .tr > :nth-child(1) > p')
+    it("Should get the first row of a recent expense transaction", () => {
+        cy.get('.recent-expense > #transactions > :nth-child(1) > .tr > :nth-child(1) > p').contains("food")
+        cy.get('.recent-expense > #transactions > :nth-child(1) > .tr > :nth-child(2) > p').contains("food")
+        cy.get('.recent-expense > #transactions > :nth-child(1) > .tr > :nth-child(3) > p').contains("2021-07-06")
+        cy.get('.recent-expense > #transactions > :nth-child(1) > .tr > :nth-child(4) > p').contains("4.5")
     })
 
-    it("Should get the first description of a recent expense transaction ", () => {
-        cy.get('.recent-expense > #transactions > :nth-child(1) > .tr > :nth-child(2) > p')
-    })
-
-    it("Should get the date of a recent expense transaction", () => {
-        cy.get('.recent-expense > #transactions > :nth-child(1) > .tr > :nth-child(3) > p')
-    })
-
-    it("Should get the amount of a recent expense transaction", () => {
-        cy.get('.recent-expense > #transactions > :nth-child(1) > .tr > :nth-child(4) > p')
+    it("Should get the first row of a recent income transaction", () => {
+        cy.get('.recent-income > #transactions > :nth-child(1) > .tr > :nth-child(1)').contains("employment")
+        cy.get('.recent-income > #transactions > :nth-child(1) > .tr > :nth-child(2) > p').contains("july 2021")
+        cy.get('.recent-income > #transactions > :nth-child(1) > .tr > :nth-child(3) > p').contains("2021-07-02")
+        cy.get('.recent-income > #transactions > :nth-child(1) > .tr > :nth-child(4) > p').contains("$1040.0")
     })
 
 
+   
     // Testing left hand menu buttons 
 
     it("Should be able to click expenses on the main navigation menu", () => {
         cy.get("#expenses").click()
-    }) 
-
-    it("Should be able to click income on the main navigation menu", () => {
         cy.get("#income").click()
-    })
-
-    it("Should be able to click dashboard on the main navigation menu", () => {
         cy.get("#dashboard").click()
-    })
+    }) 
   })

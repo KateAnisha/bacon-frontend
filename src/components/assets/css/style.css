@@ -214,6 +214,17 @@ input:focus {
     
 }
 
+#intro-link {
+    text-decoration: none;
+    color: #32B2A8;
+    cursor: pointer;
+}
+
+#intro-link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 /*
 .content-wrapper {
     display: grid;
