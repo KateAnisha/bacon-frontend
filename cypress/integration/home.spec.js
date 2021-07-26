@@ -51,8 +51,6 @@
         cy.get('.recent-income > #transactions > :nth-child(1) > .tr > :nth-child(3) > p').contains("2021-07-02")
         cy.get('.recent-income > #transactions > :nth-child(1) > .tr > :nth-child(4) > p').contains("$1040.0")
     })
-
-
    
     // Testing left hand menu buttons 
 
@@ -60,7 +58,7 @@
         cy.get("#expenses").click()
         cy.get("#income").click()
         cy.get("#dashboard").click()
-        cy.get('.nested > :nth-child(2) > a').click()
-        cy.get('.nested > :nth-child(4) > a').click()
+        // cy.get('.nested > :nth-child(2) > a').click()
+        // cy.get('.nested > :nth-child(4) > a').click()
     }) 
   })
