@@ -18,6 +18,7 @@ function Expenses() {
     return ( 
         <>
             <div className="content-wrapper">
+            <h2>Income transaction history</h2>
                 <div className="display-transactions">
                    <Transactions type={"Income"}/>
                 </div>

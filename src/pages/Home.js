@@ -14,7 +14,8 @@ export default function Home() {
 
     return (
         <>
-            <h2>Hi, {name ? name : ""} </h2>
+            {/* <h2>Hi, {name ? name : ""} </h2> */}
+            
             
                 <div className="recent-income">
                     <Transactions type={"Income"} limit={5} />
@@ -27,34 +28,23 @@ export default function Home() {
                 {/* <CreateCategory /> */}
 
                 <div className="sub-menu">
-                    <div className="nested">
-                        <div className="container">
-                            <div className="sub-menu">Manage Budget</div> 
-                            <div className="arrow"></div>
-                            <Link to="/budget">Update budget</Link>
-                        </div>
-
-                        <div className="container">
-                            <div className="sub-menu">Manage Categories</div>
-                            <div className="arrow"></div>
-                            <Link to="/categories">View categories</Link>
-                            <br />
-                            <Link to="/categories/new">Create category</Link>
-                        </div>
-                        
-                        <div className="container">
-                            <div className="sub-menu">User Settings</div>
-                            <div className="arrow"></div>
-                            <Link to="/user/name">Update name</Link>
-                            <br />
-                            <Link to="/user/password">Update password</Link>
-                        </div>
+                    <div className="submenu-items">
+                        <h3>Manage Budget </h3>
+                        <Link to="/budget" id="intro-link">Update budget</Link>
+                        <h3>Manage Categories</h3>
+                        <Link to="/categories" id="intro-link">View categories</Link>
+                        <Link to="/categories/new" id="intro-link">Create category</Link>
+                        <h3>User Settings</h3>
+                        <Link to="/user/name" id="intro-link">Update name</Link>
+                        <Link to="/user/password" id="intro-link">Update password</Link>
                     </div>
                 </div>
 
                 <div className="charts">
                     <BarChart />
                 </div>
+
+                
             
         </>
     )

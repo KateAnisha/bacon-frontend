@@ -17,7 +17,7 @@ export default function MainNav() {
   return (
     <nav>
       <ul>
-        <li><Link to="/"><img src={Home} alt="Home Icon" className="nav-icon"/></Link></li>
+        <li><Link to="/home"><img src={Home} alt="Home Icon" className="nav-icon"/></Link></li>
         <li><Link to="/expenses"><img src={Expenses} alt="Chart Icon" className="nav-icon"/></Link></li>
         <li><Link to="/income"><img src={Income} alt="Chart Icon" className="nav-icon"/></Link></li>
         <li><Link to="/dashboard"><img src={Chart} alt="Chart Icon" className="nav-icon"/></Link></li>
