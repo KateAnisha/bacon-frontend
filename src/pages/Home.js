@@ -26,7 +26,6 @@ export default function Home() {
 
                 {/* <CreateCategory /> */}
 
-
                 <div className="sub-menu">
                     <div className="nested">
                         <div className="container">

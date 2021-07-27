@@ -47,14 +47,14 @@ export default function Login() {
         <div className="wrapper">
             <img src={pigImg} alt="Piggybank Icon" className="pig-img"/>
             <div className="left">
-                <img src={appLogo} alt="Application Logo" className="app-logo"/>
+                <img src={appLogo} alt="Application Logo" className="app-logo" id="main-logo"/>
             </div>
             <div className="right">
                 {errorMessage && <h4 style={{ color: "red" }}>{errorMessage}</h4>}
                 <form onSubmit={submit} className="main-form">
                     <input placeholder="Email" onChange={(e) => setEmail(e.target.value)} value={email} />
                     <input placeholder="Password" type="password" onChange={(e) => setPassword(e.target.value)} value={password} />
-                    <button type="submit">Login</button>
+                    <button type="submit" className="login-btn">Login</button>
                     <p>Don't have an account? <Link to="/register" id="intro-link">Register now </Link></p>
                 </form>
             </div> 

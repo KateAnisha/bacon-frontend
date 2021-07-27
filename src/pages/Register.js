@@ -50,16 +50,16 @@ export default function Register() {
         <div className="wrapper">
             <img src={pigImg} alt="Piggybank Icon" className="pig-img"/>
             <div className="left">
-                <img src={appLogo} alt="Application Logo" className="app-logo"/>
+                <img src={appLogo} alt="Application Logo" className="app-logo" id="main-logo"/>
             </div>
             <div className="right">
                 {errorMessage && <h4 style={{ color: "red" }}>{errorMessage}</h4>}
-                <form className="" onSubmit={submit}>
+                <form className="register-form" onSubmit={submit}>
                     <input type="text" value={name} name="name" placeholder="Name" onChange={(e) => setName(e.target.value)} />
                     <input type="text" value={email} name="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
                     <input type="password" value={password} name="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
                     <input type="password" value={passwordConfirm} name="passwordConfirm" placeholder="Confirm Password" onChange={(e) => setPasswordConfirm(e.target.value)} />
-                    <input type="submit" value="Add transaction" id="submit-btn" />
+                    <input type="submit" value="Register" className="login-btn" id="submit-btn" />
                 </form>
                 <p>Already have an account? <Link to="/login"  id="login-link">Log in now </Link> </p>
             </div>

@@ -1,49 +1,59 @@
 
-.app-logo {
-    width: 420px;
+#main-logo {
+    width: 520px;
     height: auto;
-    margin-top: -120px !important;
-}
-
-
-.welcome-btn{ 
-    margin-top: -120px !important;
-}
-
-.main-form {
-    display: flex;
-    flex-direction: column;
+    /* margin-top: -120px !important; */
     
 }
 
-.main-form > input {
+.welcome-btn, .login-btn {
+    text-align: center !important;
+    background-color: #32B2A7;
+    border: none;
     border-radius: 25px;
+    cursor: pointer;
+    color: #fff;
+    height: 28px;
+    width: 220px;
+    line-height: 28px;
+    text-transform: uppercase;
+    border: 2px solid #32b2a7;
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 12px;
+    text-decoration: none;
+    font-family: Helvetica, Arial;
+   
+}
+
+.welcome-btn:hover, .login-btn:hover{
+    background-color: #fff;
+    border: 2px solid #32b2a7;
+    color: #32B2A7;
+}
+
+.main-form, .register-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-form > input, .register-form > input {
+    border-radius: 20px;
     border: 3px solid #60ACA5;
-    height: 30px;
+    height: 20px;
     width: 220px;
     margin: 10px 0 15px 0;
     padding: 8px 8px;
-    
 }
 
-/* ::placeholder:focus{
-    color: red;
-} 
-
-*/
-
-
-
-.main-form > input:focus {
+.main-form > input:focus, .register-form > input:focus {
     border-radius: 25px;
     border: 3px solid #707070;
-    
 }
 
 *:focus {
     outline: none;
 }
-
 
 .wrapper {
     display: grid;
