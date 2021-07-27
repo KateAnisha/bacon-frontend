@@ -32,7 +32,7 @@ function App() {
     categories: [],
     transactions: [],
     budget: 0,
-    token: "",
+    token: cookies.token,
     name: ""
   })
 

@@ -78,7 +78,7 @@ function Transactions({type, limit}) {
         </div>
     )
     return (
-        <div className="transaction-listing">
+        <div id="transactions" className="transaction-listing">
            {filtered_transactions}
         </div>
     )
