@@ -4,16 +4,34 @@
 }
 
 .App {
+    font-family: Helvetica, Arial;
     display: grid;
     height: 100vh;
     grid-template-columns: .3fr 1fr 1fr .5fr;
-    grid-template-rows: .5fr 1fr 1fr;
+    grid-template-rows: .5fr .5fr 1fr 1fr;
     grid-template-areas: 
         "header header header header"
-        "nav expenses income sub-menu"
+        "nav title title title"
+        "nav income expenses sub-menu"
         "nav charts charts sub-menu"
     ;
+}
 
+.title {
+    color: #32B2A7;
+}
+
+
+.welcome {
+    grid-area: title;
+}
+
+.welcome-msg {
+    padding-bottom: 0;
+}
+
+.link {
+    text-decoration: none;
 }
 
 /* HEADER */
@@ -27,6 +45,7 @@ header {
     grid-area: header;
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 
 /* MAIN NAVIGATION */
@@ -64,36 +83,58 @@ ul {
 
 .sub-menu {
     grid-area: sub-menu;
+    color: #32B2A7;
 }
 
 .recent-expense {
-    grid-area: expenses;
     padding: 12px;
+    background-color: #ededed;
+    border-radius: 25px;
+}
+
+.recent-expense-container {
+    grid-area: expenses;
+}
+
+.recent-income-container {
+    grid-area: income;
+}
+
+.grid-column {
+    padding-left: 12px;
 }
 
 .recent-income {
-    grid-area: income;
     padding: 12px;
+    background-color: #ededed;
+    border-radius: 25px;
 }
+
 
 .charts {
     grid-area: charts;
+}
+
+/* BAR CHART */
+.barChart {
     background-color: #ededed;
     border-radius: 25px;
     padding: 12px;
 }
 
-
-
 /* TRANSACTIONS */
 
-.transaction-listing {
+.transaciton-list {
+    background-color: #ededed;
+    padding: 6px;
+    border-radius: 25px;
+}
+
+.transaction {
     width: 100%;
     display: table;
+    padding: 6px !important;
     table-layout: fixed;
-    border-radius: 25px;
-    /* padding: 1px; */
-    background-color: #ededed;
 }
 
 .tr {
@@ -102,8 +143,6 @@ ul {
 
 .show-transactions {
     word-wrap: break-word;
-    padding: 5px 0;
-    padding: 6px 3px;
     /* border: 1px solid green; */
     display: table-cell;
     width: 60px;
@@ -130,7 +169,24 @@ ul {
 }
 
 /* FONT STYLING */ 
-h1, h2, p {
+.budget {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+
+#budget-amount {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    color: #32B2A7;
+}
+
+.transaction-type{
+    padding-left: 12px;
+}
+
+h1, h2, h3, h4,p {
     font-family: Helvetica, Arial;
     color: #7c7c7c;
 }

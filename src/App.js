@@ -4,8 +4,6 @@ import stateReducer, { stateContext } from './stateReducer'
 import { useCookies } from 'react-cookie'
 import { Redirect } from 'react-router-dom'
 
-
-
 import Entrance from './pages/Entrance'
 import Register from './pages/Register'
 import Login from './pages/Login'
@@ -132,7 +130,6 @@ function App() {
               <Route exact path="/user/name" component={UpdateName} />
               <Route exact path="/user/password" component={UpdatePassword} />
               <Route exact path="/budget" component={BudgetForm} />
-              {/* <Route exact path="/dashboard" component={Charts} /> */}
             </Switch>
             </> :
             <>

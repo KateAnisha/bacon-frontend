@@ -1,6 +1,7 @@
 import LineChart from "../components/LineChart";
 import PieChart from "../components/PieChart";
 
+
 export default function Dashboard() {
     return (
         <div>

@@ -2,13 +2,14 @@ import React, { useState } from 'react'
 import { useContext } from 'react'
 import { stateContext } from '../stateReducer'
 import { useCookies } from 'react-cookie'
-import { useHistory } from "react-router-dom"
+import { useHistory } from 'react-router-dom'
 
-import '../components/assets/css/style.css';
+import '../components/assets/css/style.css'
+
 
 export default function BudgetForm() {
     const history = useHistory()
-    const { budget, dispatch } = useContext(stateContext)
+    const { dispatch } = useContext(stateContext)
     const [updatedBudget, setUpdatedBudget] = useState()
     const [cookies] = useCookies(['token'])
 

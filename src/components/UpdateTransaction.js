@@ -3,13 +3,11 @@ import { useContext } from 'react'
 import { stateContext } from '../stateReducer'
 import { useCookies } from 'react-cookie'
 import { useParams } from 'react-router-dom'
-import { useHistory } from 'react-router-dom'
 
+import '../components/assets/css/style.css'
 
-import '../components/assets/css/style.css';
 
 export default function UpdateTransaction() {
-    const history = useHistory()
     const [category, setCategory] = useState()
     const { transaction_id } = useParams()
     const { categories, transactions, dispatch } = useContext(stateContext)
@@ -21,8 +19,6 @@ export default function UpdateTransaction() {
     const [date, setDate] = useState()
 
     useEffect(() => {
-        // console.log(transactions.find(transaction => transaction.id == transaction_id))
-        // console.log(transaction_id)
         const selected_transaction = transactions.find(transaction => transaction.id == transaction_id) 
         setSelectedTransaction(selected_transaction)
     }, [transactions])
@@ -44,7 +40,6 @@ export default function UpdateTransaction() {
             setDescription("")
             setDate("")
             setAmount("")
-            // setSelectedTransaction(data)
             dispatch({
                 type: "updateTransactions",
                 transaction: data
@@ -62,14 +57,18 @@ export default function UpdateTransaction() {
 
     return (
         <>
-            <div>
-                <h2>Current value</h2>
-                <p><strong>Type: </strong>{selectedTransaction ? selectedTransaction.type : ''}</p>
-                <p><strong>Category: </strong>{selectedTransaction ? selectedTransaction.category : ''}</p>
-                <p><strong>Description: </strong>{selectedTransaction ? selectedTransaction.description : ''}</p>
-                <p><strong>Date: </strong>{selectedTransaction ? selectedTransaction.date : ''}</p>
-                <p><strong>Amount: </strong>{selectedTransaction ? selectedTransaction.amount : ''}</p>
-            </div>
+            {
+                selectedTransaction && 
+                <div>
+                    <h2>Current value</h2>
+                    <p><strong>Type: </strong>{selectedTransaction.type}</p>
+                    <p><strong>Category: </strong>{selectedTransaction.category}</p>
+                    <p><strong>Description: </strong>{selectedTransaction.description}</p>
+                    <p><strong>Date: </strong>{selectedTransaction.date}</p>
+                    <p><strong>Amount: </strong>{selectedTransaction.amount}</p>
+                </div>
+            }
+            
             <div>
                 <h2>Update transaction</h2>
                 {errorMessage && <h4 style={{ color: "red" }}>{errorMessage}</h4>}
@@ -84,7 +83,6 @@ export default function UpdateTransaction() {
                     <input type="submit" value="Update" id="submit-btn" />
                 </form>
             </div>
-           
         </>
     )
 }

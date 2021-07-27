@@ -40,10 +40,11 @@ export default function UpdateName() {
     return (
         <div>
             <h2>Update name</h2>
-        <form onSubmit={submit}>
-            <input type="text" value={name} placeholder="Name" onChange={(e) => setName(e.target.value)}/>
-            <input type="submit" value="Update" id="submit-btn" />
-        </form>
+            {errorMessage && <h4 style={{ color: "red" }}>{errorMessage}</h4>}
+            <form onSubmit={submit}>
+                <input type="text" value={name} placeholder="Name" onChange={(e) => setName(e.target.value)}/>
+                <input type="submit" value="Update" id="submit-btn" />
+            </form>
         </div>
     )
 }

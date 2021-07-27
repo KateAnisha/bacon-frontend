@@ -5,7 +5,6 @@ import appLogo from '../components/assets/images/Logo-final.svg'
 import pigImg from '../components/assets/images/login-piggy.svg'
 
 
-
 export default function Entrance() {
     return (
         <div className="entrance">
@@ -17,6 +16,7 @@ export default function Entrance() {
             </div>
             <div className="right">
                 <Link to="/login">LOGIN</Link>
+                <br />
                 <Link to="/register">REGISTER</Link>
             </div>
         </div>

@@ -31,7 +31,6 @@ export default function Login() {
         const data = await res.json()
        if (res.status === 201) {
             setCookie('token', data.token, { path: '/' } )
-            // setTokenCookie(data.token)
             dispatch({
                 type: "setToken",
                 token: data.token
