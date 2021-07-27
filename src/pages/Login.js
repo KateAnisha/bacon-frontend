@@ -35,7 +35,7 @@ export default function Login() {
                 type: "setToken",
                 token: data.token
             })
-            history.push('/home')
+            history.push('/')
        } else {
             setErrorMessage(data.error)
        }

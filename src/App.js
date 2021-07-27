@@ -119,7 +119,7 @@ function App() {
             <Header />
             <MainNav />
             <Switch>
-              <Route exact path="/home" component={Home} />
+              <Route exact path="/" component={Home} />
               <Route exact path="/income" component={Income} />
               <Route exact path="/expenses" component={Expenses} />
               <Route exact path="/dashboard" component={Dashboard} />

@@ -31,7 +31,7 @@ export default function UpdateName() {
                 type: "setName",
                 name: data.name
             })
-            history.push('/home')
+            history.push('/')
         } else {
             setErrorMessage(data.error)
         }

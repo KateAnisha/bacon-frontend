@@ -40,7 +40,7 @@ export default function Register() {
             setEmail("")
             setPassword("")
             setPasswordConfirm("")
-            history.push("/home")
+            history.push("/")
         } else {
         setErrorMessage(data.error)
         }
