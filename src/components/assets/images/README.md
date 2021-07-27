@@ -299,15 +299,11 @@ To handle the back end of our application, we chose to use Rails, a library buil
 
 Lastly, our application also uses APEX Charts. APEX Charts is a library that allows us to display data in a variety of different charts. APEX Charts is customizable and allows us to choose from a range of charts (pie, graph etc) and even allows us to use different graphs simultaneously to show the user a clear distinction between the graphs. Lastly, APEX Charts is responsive for a variety of mobile devices (Malek, 2020). We chose to use APEX charts to provide the user with visual feedback about their spending habits. 
 
-For front end testing we chose to use Cypress. The reason we chose Cypress for our front end testing, because it is a pure JavaScript-based testing tool which we thought would work seamlessly with React, a JavaScript framework. To test our backend we chose to use RSpec. Rspec also works seamlessly with Ruby which assists a Test Driven Development approach to coding more productive. This was also used as well as Shoulda Matchers, a gem that allows us to run one line tests on the functionality of Rails. The benefit of Shoulda Matches also reduces the amount of errors in a test and size of the tests if they were to be written manually. 
+For front end testing we chose to use Cypress. The reason we chose Cypress for our front end testing, because it is a pure JavaScript-based testing tool which we thought would work seamlessly with React, a JavaScript framework. To test our backend we chose to use RSpec. Rspec also works seamlessly with Ruby which assists a Test Driven Development approach to coding more productive. This was also used as well as Shoulda Matchers, a gem that allows us to run one line tests on the functionality of Rails. The benefit of Shoulda Matches also reduces the amount of errors in a test and reduces the size of the tests if they were to be written manually. For testing our backend the gem Database Cleaner was used to clean the ActiveRecord databases. This was used to ensure that each test started out as a clean state prior to testing. 
 
 Rack-cors was used to assist with Cross-Origin Resource Sharing. By using this gem we were able to make cross domain AJAX calls between our front end deployment platform (Netlify) and backend platform (Heroku). The benefit of using Rack-cors is so that we don't have to use a different workaround such as JSONP. 
 
-
-rack-cors - handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
-database_cleaner-active_record - clean records created for testing
-bcrypt - for encrypting password
-Shoulda Matchers
+In order to build a secure platform for our web application, we utilised a gem called Bycrypt. Bycrypt is a library that assists us to salt and hash passwords which we used within our code to ensure that users information was secure. 
 
 ### task delegation methodology
 Prior to starting the web application, we held and initial meeting where we discussed each others strengths and weaknesses. As Kate had experience with graphic design and designing to websites, we decided that she would handle the front end. Noe's skills were also in the front end however, we compromised and decided that he would handle the back-end and also assist with front end. Noe also had experience with adding charts to applications and he was keen to implement similar features into our web application. 
