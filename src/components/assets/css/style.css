@@ -214,13 +214,13 @@ input:focus {
     
 }
 
-#intro-link {
+#intro-link, #login-link {
     text-decoration: none;
     color: #32B2A8;
     cursor: pointer;
 }
 
-#intro-link:hover {
+#intro-link:hover, #login-link:hover {
     text-decoration: underline;
     cursor: pointer;
 }

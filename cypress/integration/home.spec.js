@@ -10,7 +10,6 @@
             {"id":33,"description":"pizza","amount":"10.5","date":"2021-07-13","category":"food","type":"expense"},
             {"id":44,"description":"flower","amount":"20.0","date":"2021-07-21","category":"gifts","type":"expense"},
             {"id":55,"description":"july 2021","amount":"1040.0","date":"2021-07-02","category":"employment","type":"income"}]
-  
     })
 
     cy.intercept("http://localhost:5000/api/v1/user/categories", {
@@ -53,9 +52,25 @@
 
     it("Should be able to click expenses on the main navigation menu", () => {
         cy.get("#expenses").click()
-        cy.get("#income").click()
-        cy.get("#dashboard").click()
-        // cy.get('.nested > :nth-child(2) > a').click()
-        // cy.get('.nested > :nth-child(4) > a').click()
+        cy.location("pathname").should("eq", "/expenses")
+        // cy.get("#income").click()
+        // cy.get("#dashboard").click()
     }) 
+    it("Should get the first row of a recent expense transaction", () => {
+        cy.get(':nth-child(1) > .tr > :nth-child(1) > p').contains("food")
+        cy.get(':nth-child(1) > .tr > :nth-child(2) > p').contains("food")
+        cy.get(':nth-child(1) > .tr > :nth-child(3) > p').contains("2021-07-06")
+        cy.get(':nth-child(1) > .tr > :nth-child(4) > p').contains("$4.5")
+        cy.get(':nth-child(1) > .tr > :nth-child(5) > #edit').click()
+        cy.get(':nth-child(1) > .tr > :nth-child(5) > #delete').click()
+        cy.get('#add-transaction > .transaction-form').within(() => {
+            cy.get('select')
+            cy.get('[type="text"]').type("Transaction desc")
+            cy.get('[type="number"]').type("4.5")
+            // cy.get('[type="date"]').type("2021/12/12")
+            cy.get('#submit-btn').click()
+
+        })
+
+    })
   })

@@ -61,7 +61,7 @@ export default function Register() {
                     <input type="password" value={passwordConfirm} name="passwordConfirm" placeholder="Confirm Password" onChange={(e) => setPasswordConfirm(e.target.value)} />
                     <input type="submit" value="Add transaction" id="submit-btn" />
                 </form>
-                <p>Already have an account? <Link to="/login"  id="intro-link">Log in now </Link> </p>
+                <p>Already have an account? <Link to="/login"  id="login-link">Log in now </Link> </p>
             </div>
         </div>
     )
