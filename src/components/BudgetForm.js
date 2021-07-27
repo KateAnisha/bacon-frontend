@@ -29,7 +29,7 @@ export default function BudgetForm() {
               type: "setBudget",
               budget: updatedBudget,
             })
-            history.push('/')
+            history.push('/home')
         }
     }
 
