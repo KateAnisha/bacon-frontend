@@ -19,13 +19,10 @@ function Expenses() {
         <>
             <div className="content-wrapper">
                 <div className="display-transactions">
-                   <Transactions type={"income"}/>
+                   <Transactions type={"Income"}/>
                 </div>
                 <div className="transaction-form">
-                    {/* <Header totalIncome={totalIncome} /> */}
-                    <TransactionForm type={"income"} />
-                    {/* <ExpenseTransactions income={income} setIncome={setIncome}/> */}
-                    {/* <TransactionItem income={income} /> */}
+                    <TransactionForm type={"Income"} />
                 </div>
             </div>
         </>

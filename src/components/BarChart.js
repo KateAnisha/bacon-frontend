@@ -22,14 +22,13 @@ export default function BarChart() {
     const [series, setSeries] = useState([
         {name: "series-1", data: []}
       ])
-    // new Array with category description of current month and only expense
     
     useEffect(() => {
         const current_month_index = new Date().getMonth()
         const current_month_transactions = transactions.filter(transaction => transaction.date.split("-")[1] == current_month_index + 1)
         let current_month_categories = []
         for (let i=0; i<current_month_transactions.length; i++) {
-            if (current_month_transactions[i].type == "expense" && !current_month_categories.includes(current_month_transactions[i].category)) {
+            if (current_month_transactions[i].type == "Expense" && !current_month_categories.includes(current_month_transactions[i].category)) {
                 current_month_categories.push(current_month_transactions[i].category)
             }
         }

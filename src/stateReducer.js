@@ -16,6 +16,33 @@ export default function stateReducer (currentState, action) {
             }
         }
 
+        case "updateCategories": {
+            const index = currentState.categories.findIndex(category => category.id === action.category.id)
+            const categories = [...currentState.categories]
+            categories[index] = action.category
+            return {
+                ...currentState,
+                categories
+            }
+        }
+
+        case "updateTransactions": {
+            const index = currentState.transactions.findIndex(transaction => transaction.id === action.transaction.id)
+            const transactions = [...currentState.transactions]
+            transactions[index] = action.transaction
+            return {
+                ...currentState,
+                transactions
+            }
+        }
+
+        case "setName": {
+            return {
+                ...currentState,
+                name: action.name
+            }
+        }
+
         case "setBudget": {
             return {
                 ...currentState,

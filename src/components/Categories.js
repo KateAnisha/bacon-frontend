@@ -2,13 +2,18 @@ import React from 'react'
 import { useContext } from 'react'
 import { stateContext } from '../stateReducer'
 import { useCookies } from 'react-cookie'
-import CategoryForm from './CategoryForm'
+import CreateCategory from './CreateCategory'
+import { useHistory } from 'react-router-dom'
 
 
 export default function Categories() {
+    const history = useHistory()
     const [cookies] = useCookies(["token"])
     const { categories, transactions, dispatch } = useContext(stateContext)
 
+    function redirectToForm(id) {
+        history.push(`/categories/${id}`)
+    }
     // async function updateTransaction(id) {
     //     // event.preventDefault()
     //     // const transaction = { description: description, amount: amount, date: date, category_id: category }
@@ -53,18 +58,18 @@ export default function Categories() {
         }
     }
 
-    const income_categories = categories.filter(category => category.type === "income").map(category => 
+    const income_categories = categories.filter(category => category.type === "Income").map(category => 
         <div key={category.id}>
             <p>{category.description}</p>
-            <button>Update</button>
+            <button onClick={() => redirectToForm(category.id)}>Edit</button>
             <button onClick={() => deleteCategory(category)}>Delete</button>
         </div>
     )
 
-    const expense_categories = categories.filter(category => category.type === "expense").map(category => 
+    const expense_categories = categories.filter(category => category.type === "Expense").map(category => 
         <div key={category.id}>
             <p>{category.description}</p>
-            <button>Update</button>
+            <button onClick={() => redirectToForm(category.id)}>Edit</button>
             <button onClick={() => deleteCategory(category)}>Delete</button>
         </div>
     )
@@ -78,7 +83,7 @@ export default function Categories() {
            <h3>Expense categories</h3>
                {expense_categories}
            </div>
-           <CategoryForm />
+           
         </div>
     )
 }

@@ -2,10 +2,12 @@ import React, { useState } from 'react'
 import { useContext } from 'react'
 import { stateContext } from '../stateReducer'
 import { useCookies } from 'react-cookie'
+import { useHistory } from "react-router-dom"
 
 import '../components/assets/css/style.css';
 
 export default function BudgetForm() {
+    const history = useHistory()
     const { budget, dispatch } = useContext(stateContext)
     const [updatedBudget, setUpdatedBudget] = useState()
     const [cookies] = useCookies(['token'])
@@ -20,14 +22,14 @@ export default function BudgetForm() {
                 "Authorization": `Bearer ${cookies.token}`,
                 "Content-Type": "application/json"
             }
-        })
+        }) 
         const data = res.json()
         if (res.status === 200) {
             dispatch({
               type: "setBudget",
               budget: updatedBudget,
             })
-            console.log(budget)
+            history.push('/')
         }
     }
 

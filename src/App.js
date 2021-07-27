@@ -1,11 +1,11 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import React, { useState, useEffect, useReducer } from 'react'
+import React, { useEffect, useReducer } from 'react'
 import stateReducer, { stateContext } from './stateReducer'
 import { useCookies } from 'react-cookie'
-import { Redirect } from "react-router-dom"
+import { Redirect } from 'react-router-dom'
 
 
-import Welcome from './pages/Welcome'
+
 import Entrance from './pages/Entrance'
 import Register from './pages/Register'
 import Login from './pages/Login'
@@ -16,23 +16,47 @@ import Income from './pages/Income'
 import Expenses from './pages/Expenses'
 import Dashboard from './pages/Dashboard'
 import Categories from './components/Categories'
-import './components/assets/css/style.css'
 import BudgetForm from './components/BudgetForm'
+import UpdateCategory from './components/UpdateCategory'
+import UpdateTransaction from './components/UpdateTransaction'
+import UpdateName from './components/UpdateName'
+import UpdatePassword from './components/UpdatePassword'
+import CreateCategory from './components/CreateCategory'
+
+import './components/assets/css/style.css'
 
 
 function App() {
-  // const [isLoggedIn, setIsLoggedIn] = useState(false)
   const [cookies, setCookie, removeCookie] = useCookies(['token'])
   const [store, dispatch] = useReducer(stateReducer, {
     categories: [],
     transactions: [],
     budget: 0,
-    token: ""
+    token: "",
+    name: ""
   })
 
   function setTokenCookie(token) {
     setCookie('token', token, { path: '/' } )
   }
+
+  useEffect(async () => {
+    if (!cookies.token) return
+    const res = await fetch(`${process.env.REACT_APP_API_ENDPOINT}user/me`, {
+      headers: {
+        "Authorization": `Bearer ${cookies.token}`
+      }
+    })
+    const data = await res.json()
+    if (res.status === 200) {
+      dispatch({
+        type: "setName",
+        name: data.name,
+      })
+    } else {
+      removeCookie("token")
+    }
+  }, [store.token])
 
   useEffect(async () => {
     if (!cookies.token) return
@@ -92,7 +116,7 @@ function App() {
     <stateContext.Provider value={{ ...store, dispatch }}>
       <div className="App">
         <Router>
-          { store.token ? 
+          { cookies.token ? 
             <>
             <Header />
             <MainNav />
@@ -102,6 +126,11 @@ function App() {
               <Route exact path="/expenses" component={Expenses} />
               <Route exact path="/dashboard" component={Dashboard} />
               <Route exact path="/categories" component={Categories} />
+              <Route exact path="/categories/new" component={CreateCategory} />
+              <Route exact path="/categories/:category_id" component={UpdateCategory} />
+              <Route exact path="/transactions/:transaction_id" component={UpdateTransaction} />
+              <Route exact path="/user/name" component={UpdateName} />
+              <Route exact path="/user/password" component={UpdatePassword} />
               <Route exact path="/budget" component={BudgetForm} />
               {/* <Route exact path="/dashboard" component={Charts} /> */}
             </Switch>
