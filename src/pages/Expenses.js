@@ -3,7 +3,6 @@ import React from 'react'
 import Transactions from '../components/Transactions'
 import TransactionForm from '../components/TransactionForm'
 
-import '../components/assets/css/transactions.css'
 
 function Expenses() {
     return ( 

@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 import { useCookies } from 'react-cookie'
 import { useHistory } from "react-router-dom"
 
-import '../components/assets/css/main.css';
+// import '../components/assets/css/main.css';
 import appLogo from '../components/assets/images/Logo-final.svg'
 import pigImg from '../components/assets/images/login-piggy.svg'
 
@@ -54,7 +54,7 @@ export default function Login() {
                     <input placeholder="Email" onChange={(e) => setEmail(e.target.value)} value={email} />
                     <input placeholder="Password" type="password" onChange={(e) => setPassword(e.target.value)} value={password} />
                     <button type="submit">Login</button>
-                    <p>Don't have an account? <Link to="/register">Register</Link> now</p>
+                    <p>Don't have an account? <Link to="/register" id="intro-link">Register now </Link></p>
                 </form>
             </div> 
         </div>

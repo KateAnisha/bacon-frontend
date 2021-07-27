@@ -3,6 +3,13 @@
     padding: 0;
 }
 
+.entrance {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    grid-template-areas: 
+        "left right" !important;
+}
+
 .App {
     font-family: Helvetica, Arial;
     display: grid;
@@ -162,10 +169,10 @@ ul {
 
 
 .welcome-btn {
-    /* margin: auto; 
+    margin: auto; 
     display: flex;
     flex-direction: column;
-    margin-top: 15px; */
+    margin-top: 15px;
 }
 
 /* FONT STYLING */ 
@@ -201,7 +208,7 @@ h2 {
     padding: 12px 0;
 }
 
-/*
+
 .main-btn {
     text-align: center !important;
     background-color: #32B2A7;
@@ -217,6 +224,8 @@ h2 {
     text-align: center;
     font-size: 22px;
     margin-bottom: 12px;
+    text-decoration: none;
+    font-family: Helvetica, Arial;
    
 }
 
@@ -227,7 +236,7 @@ h2 {
 }
 
 
-*/ 
+
 .transaction-form > input{
     border-radius: 25px;
     background-color: #EDEDED;
@@ -268,6 +277,18 @@ input:focus {
     
 }
 
+#intro-link, #login-link {
+    text-decoration: none;
+    color: #32B2A8;
+    cursor: pointer;
+}
+
+#intro-link:hover, #login-link:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+/*
 .content-wrapper {
     display: grid;
     grid-template-columns: 3fr 1fr;
@@ -278,4 +299,4 @@ input:focus {
     border-radius: 25px;
     height: 400px;
 }
-
+*/
