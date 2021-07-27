@@ -306,7 +306,7 @@ Rack-cors was used to assist with Cross-Origin Resource Sharing. By using this g
 In order to build a secure platform for our web application, we utilised a gem called Bycrypt. Bycrypt is a library that assists us to salt and hash passwords which we used within our code to ensure that users information was secure. 
 
 ### task delegation methodology
-Prior to starting the web application, we held and initial meeting where we discussed each others strengths and weaknesses. As Kate had experience with graphic design and designing to websites, we decided that she would handle the front end. Noe's skills were also in the front end however, we compromised and decided that he would handle the back-end and also assist with front end. Noe also had experience with adding charts to applications and he was keen to implement similar features into our web application. 
+Prior to starting the web application, we held and initial meeting where we discussed each others strengths and weaknesses. As Kate had experience with graphic design and designing  websites, we decided that she would handle the front end. Noe's skills were also in the front end however, we compromised and decided that he would handle the back-end and also assist with front end. Noe also had experience with adding charts to applications and he was keen to implement similar features into our web application. 
 
 During the initial meeting we discussed the application requirements, which included an overview of the user stories and an assessment of each team members skills. We began the project by utilising [Trello](https://trello.com/b/RkPGYQV5/kate-noe). From here we entered in each task, using the labels to group each task into one of the following categories:-
 1. Urgent and important;
@@ -319,9 +319,8 @@ Once we mutually agreed on a clear direction for our web application and prior t
 
 We made some minor changes to our application towards the end. We decided that the users budget would initially be set to 0. Initially our buttons on hover would be a lighter teal however we both decided it was more aesthetically pleasing if the border stayed teal but the inside went to white. This was more in line with our overall theme and gave the buttons a more modern look and feel. We also decided to include edit and delete buttons alongside each transaction on the home page, income and expenses page. This is so the user would be able to quickly amend a transaction if needed and delete one if it was made in error. 
 
-
 ### R10	A link (URL) to your deployed website
-[Deployed website](https://frosty-curran-19ef5d.netlify.app/entrance)
+[Deployed website](https://making-bacon.netlify.app/)
 
 ### R11	A link to your GitHub repository (repo)
 Ensure the repo is accessible by your educators!
@@ -330,7 +329,7 @@ Ensure the repo is accessible by your educators!
 [Backend](https://github.com/noe13hsu/making-bacon-api)
 
 
-
+### References
 1. Sufiyan, T., 2021. What is ReactJS: Introduction To React and Its Features. [online] Simplilearn.com. Available at: <https://www.simplilearn.com/tutorials/reactjs-tutorial/what-is-reactjs> [Accessed 24 July 2021].
 
 1. Nikulina, A., 2020. React Router. [online] Medium. Available at: <https://medium.com/@alenanikulina0/react-router-a219bb9cfae3> [Accessed 24 July 2021].

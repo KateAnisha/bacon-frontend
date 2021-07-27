@@ -32,7 +32,7 @@ export default function LineChart({type, lineColor}) {
             return new Date(a.date) - new Date(b.date);
         })
         const categories = []
-        console.log(transactions_sort_by_date)
+        // console.log(transactions_sort_by_date)
         for (let i=0; i<transactions_sort_by_date.length; i++) {
             let transaction_date_split = transactions_sort_by_date[i].date.split("-")
             let category_element = months[transaction_date_split[1]-1] + " " + transaction_date_split[0]
@@ -60,10 +60,10 @@ export default function LineChart({type, lineColor}) {
         })
         
         const data = []
-        console.log(categories)
+        // console.log(categories)
         for (let i=0; i<categories.length; i++) {
             // console.log(categories[i].split(" ")[0])
-            console.log(months.indexOf(categories[i].split(" ")[0])+1+"2021")
+            // console.log(months.indexOf(categories[i].split(" ")[0])+1+"2021")
             let monthly_total = 0
             let category_split = categories[i].split(" ")
             // console.log(Number(transaction_date_split[1])+transaction_date_split[0])

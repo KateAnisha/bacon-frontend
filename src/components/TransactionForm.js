@@ -41,38 +41,17 @@ export default function TransactionForm({type}) {
             setErrorMessage(data.error)
         }
     }
-    // const description = useRef(null);
-    // const date = useRef(null);
-    // const amount = useRef(null);
-
-    // const AddIncome = e => {
-    //     e.preventDefault();
-
-    //     let d = date.current.value.split("-");
-    //     let newD = new Date(d[0], d[1] - 1, d[2]);
-
-    //     setIncome([...income, {
-    //         "description": description.current.value,
-    //         "amount": amount.current.value,
-    //         "date": newD.getTime()
-    //     }])
-
-    //     description.current.value = "";
-    //     amount.current.value = null;
-    //     date.current.value = null;
-    // }
+   
     const filtered_categories = categories.filter(category => category.type === type).map(category => 
         <option key={category.id} value={category.id}>
             {category.description}
         </option>
     )
-    const title = type.charAt(0).toUpperCase() + type.substr(1)
 
     return (
         <>
-            <h2>{title}</h2>
+            <h2>{type}</h2>
             {errorMessage && <h4 style={{ color: "red" }}>{errorMessage}</h4>}
-            {/* {console.log(categories)} */}
             <form className="transaction-form" onSubmit={submit}>
                 <select name="category" value={category} onChange={(e) => setCategory(e.target.value)}>
                     <option>Category</option>
@@ -82,17 +61,6 @@ export default function TransactionForm({type}) {
                 <input type="date" value={date} name="date" placeholder="Date" onChange={(e) => setDate(e.target.value)} />
                 <input type="number" step="0.01" value={amount} name="amount" placeholder="Amount" onChange={(e) => setAmount(e.target.value)} />
                 <input type="submit" value="Add transaction" id="submit-btn" />
-
-
-                {/* <input type="text" name="transaction-description" id="transaction-description" placeholder="Description" ref={description}/>
-                <input type="decimal" name="amount" id="amount" placeholder="Amount" ref={amount}/>
-                <input type="date" name="date" id="date" placeholder="date" ref={date}/>
-                <datalist id="categories">
-                    <option value="food">Food</option>
-                    <option value="travel">Travel</option>
-                    <option value="health">Health</option>
-                </datalist>
-                <input type="submit" value="Add transaction" id="submit-btn"/> */}
             </form>
         </>
     )
