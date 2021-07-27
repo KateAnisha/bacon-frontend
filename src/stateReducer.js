@@ -36,6 +36,13 @@ export default function stateReducer (currentState, action) {
             }
         }
 
+        case "setName": {
+            return {
+                ...currentState,
+                name: action.name
+            }
+        }
+
         case "setBudget": {
             return {
                 ...currentState,

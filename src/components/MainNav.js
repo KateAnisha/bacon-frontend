@@ -14,10 +14,6 @@ export default function MainNav() {
   const [cookies, setCookie, removeCookie] = useCookies(['token'])
   const history = useHistory()
 
-  function logout() {
-    removeCookie('token')
-  }
-
   return (
     <nav>
       <ul>
@@ -25,7 +21,7 @@ export default function MainNav() {
         <li><Link to="/expenses"><img src={Expenses} alt="Chart Icon" className="nav-icon"/></Link></li>
         <li><Link to="/income"><img src={Income} alt="Chart Icon" className="nav-icon"/></Link></li>
         <li><Link to="/dashboard"><img src={Chart} alt="Chart Icon" className="nav-icon"/></Link></li>
-        <li><Link to="/entrance" onClick={logout}>LOG OUT</Link></li>
+        <li><Link to="/entrance" onClick={() => removeCookie('token')}>LOG OUT</Link></li>
       </ul>
     </nav>
   )

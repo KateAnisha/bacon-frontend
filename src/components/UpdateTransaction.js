@@ -13,7 +13,7 @@ export default function UpdateTransaction() {
     const [category, setCategory] = useState()
     const { transaction_id } = useParams()
     const { categories, transactions, dispatch } = useContext(stateContext)
-    const [selectedTransaction, setSelectedTransaction] = useState(transactions.find(transaction => transaction.id === transaction_id) ?? {})
+    const [selectedTransaction, setSelectedTransaction] = useState({})
     const [cookies, setCookie, removeCookie] = useCookies(['token'])
     const [errorMessage, setErrorMessage] = useState()
     const [description, setDescription] = useState()
@@ -44,7 +44,7 @@ export default function UpdateTransaction() {
             setDescription("")
             setDate("")
             setAmount("")
-            setSelectedTransaction(data)
+            // setSelectedTransaction(data)
             dispatch({
                 type: "updateTransactions",
                 transaction: data

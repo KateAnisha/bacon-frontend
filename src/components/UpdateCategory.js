@@ -12,14 +12,13 @@ export default function UpdateCategory() {
     const history = useHistory()
     const { category_id } = useParams()
     const { categories, dispatch } = useContext(stateContext)
-    const [selectedCategory, setSelectedCategory] = useState(categories.find(category => category.id === category_id) ?? {})
+    const [selectedCategory, setSelectedCategory] = useState({})
     const [cookies, setCookie, removeCookie] = useCookies(['token'])
     const [errorMessage, setErrorMessage] = useState()
     const [description, setDescription] = useState()
     const [type, setType] = useState()
 
     useEffect(() => {
-        // console.log(categories.find(category => category.id == category_id) )
         const selected_category = categories.find(category => category.id == category_id) 
         setSelectedCategory(selected_category)
     }, [categories])
@@ -41,7 +40,7 @@ export default function UpdateCategory() {
             if (res.status === 200) {
                 setDescription("")
                 setType("")
-                setSelectedCategory(data)
+                // setSelectedCategory(data)
                 dispatch({
                     type: "updateCategories",
                     category: data

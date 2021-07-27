@@ -68,7 +68,7 @@ export default function CreateCategory() {
 
     return (
         <>
-            <h2>Add category</h2>
+            <h2>Create category</h2>
             {errorMessage && <h4 style={{ color: "red" }}>{errorMessage}</h4>}
             {/* {console.log(categories)} */}
             <form className="transaction-form" onSubmit={submit}>
@@ -78,7 +78,7 @@ export default function CreateCategory() {
                     <option value="Expense">Expense</option>
                 </select>
                 <input type="text" value={description} name="description" placeholder="Description" onChange={(e) => setDescription(e.target.value)} />
-                <input type="submit" value="Add transaction" id="submit-btn" />
+                <input type="submit" value="Create" id="submit-btn" />
 
 
                 {/* <input type="text" name="transaction-description" id="transaction-description" placeholder="Description" ref={description}/>

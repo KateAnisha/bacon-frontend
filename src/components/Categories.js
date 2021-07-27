@@ -83,7 +83,7 @@ export default function Categories() {
            <h3>Expense categories</h3>
                {expense_categories}
            </div>
-           <CreateCategory />
+           
         </div>
     )
 }

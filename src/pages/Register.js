@@ -40,7 +40,7 @@ export default function Register() {
             setEmail("")
             setPassword("")
             setPasswordConfirm("")
-            // history.push("/")
+            history.push("/")
         } else {
         setErrorMessage(data.error)
         }
@@ -59,7 +59,7 @@ export default function Register() {
                     <input type="text" value={email} name="email" placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
                     <input type="text" value={password} name="password" placeholder="Password" onChange={(e) => setPassword(e.target.value)} />
                     <input type="text" value={passwordConfirm} name="passwordConfirm" placeholder="Confirm Password" onChange={(e) => setPasswordConfirm(e.target.value)} />
-                    <input type="submit" value="Add transaction" id="submit-btn" />
+                    <input type="submit" value="Register" id="submit-btn" />
                 </form>
                 <p>Already have an account? <Link to="/login">Log in</Link> now</p>
             </div>

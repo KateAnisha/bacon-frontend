@@ -19,6 +19,9 @@ import Categories from './components/Categories'
 import BudgetForm from './components/BudgetForm'
 import UpdateCategory from './components/UpdateCategory'
 import UpdateTransaction from './components/UpdateTransaction'
+import UpdateName from './components/UpdateName'
+import UpdatePassword from './components/UpdatePassword'
+import CreateCategory from './components/CreateCategory'
 
 import './components/assets/css/style.css'
 
@@ -29,12 +32,31 @@ function App() {
     categories: [],
     transactions: [],
     budget: 0,
-    token: ""
+    token: "",
+    name: ""
   })
 
   function setTokenCookie(token) {
     setCookie('token', token, { path: '/' } )
   }
+
+  useEffect(async () => {
+    if (!cookies.token) return
+    const res = await fetch(`${process.env.REACT_APP_API_ENDPOINT}user/me`, {
+      headers: {
+        "Authorization": `Bearer ${cookies.token}`
+      }
+    })
+    const data = await res.json()
+    if (res.status === 200) {
+      dispatch({
+        type: "setName",
+        name: data.name,
+      })
+    } else {
+      removeCookie("token")
+    }
+  }, [store.token])
 
   useEffect(async () => {
     if (!cookies.token) return
@@ -104,8 +126,11 @@ function App() {
               <Route exact path="/expenses" component={Expenses} />
               <Route exact path="/dashboard" component={Dashboard} />
               <Route exact path="/categories" component={Categories} />
+              <Route exact path="/categories/new" component={CreateCategory} />
               <Route exact path="/categories/:category_id" component={UpdateCategory} />
               <Route exact path="/transactions/:transaction_id" component={UpdateTransaction} />
+              <Route exact path="/user/name" component={UpdateName} />
+              <Route exact path="/user/password" component={UpdatePassword} />
               <Route exact path="/budget" component={BudgetForm} />
               {/* <Route exact path="/dashboard" component={Charts} /> */}
             </Switch>
