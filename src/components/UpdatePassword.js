@@ -30,7 +30,7 @@ export default function UpdatePassword() {
         if (res.status === 200) {
             setPassword("")
             setPasswordConfirm("")
-            history.push('/')
+            history.push('/home')
         } else {
             setErrorMessage(data.error)
         }
