@@ -74,7 +74,7 @@
         }) 
     })
 
-    it("Should be able to click expenses on the main navigation menu and test content within", () => {
+    it("Should be able to click income on the main navigation menu and test content within", () => {
         cy.get('#income').click()
         cy.location("pathname").should("eq", "/income")
         cy.get(':nth-child(1) > p').contains("employment")
@@ -88,6 +88,12 @@
             // cy.get('[type="date"]').type("2021/12/12")
             cy.get('#submit-btn').click()
         })
+    })
 
+    it("Should be able to click dashboard on the main navigation menu and test content within", () => {
+        cy.get('#dashboard').click()
+        cy.location("pathname").should("eq", "/dashboard")
+        cy.get('#SvgjsSvg1419')
+        cy.get('#SvgjsSvg1474')
     })
   })
