@@ -3,17 +3,15 @@ import { useContext } from 'react'
 import { stateContext } from '../stateReducer'
 import { useCookies } from 'react-cookie'
 import { useParams } from 'react-router-dom'
-import { useHistory } from 'react-router-dom'
 
+import '../components/assets/css/style.css'
 
-import '../components/assets/css/style.css';
 
 export default function UpdateCategory() {
-    const history = useHistory()
     const { category_id } = useParams()
     const { categories, dispatch } = useContext(stateContext)
     const [selectedCategory, setSelectedCategory] = useState({})
-    const [cookies, setCookie, removeCookie] = useCookies(['token'])
+    const [cookies, setCookie] = useCookies(['token'])
     const [errorMessage, setErrorMessage] = useState()
     const [description, setDescription] = useState()
     const [type, setType] = useState()
@@ -40,7 +38,6 @@ export default function UpdateCategory() {
             if (res.status === 200) {
                 setDescription("")
                 setType("")
-                // setSelectedCategory(data)
                 dispatch({
                     type: "updateCategories",
                     category: data

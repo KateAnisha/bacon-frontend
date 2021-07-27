@@ -82,28 +82,3 @@
     border: none;
     width: 20px;
 }  
-
-/* 
-.transaction-listing {
-    flex-direction: column;
-    justify-content: space-between !important; 
-    /* flex-wrap: wrap; */
-    /* position: relative; */
-    /* width: 100%; 
-    display: table;
-}
-
-.tr {
-    display: table-row;
-    width: 260px !important;
-} 
-
- .show-transactions {
-    display: table-cell;
-    border: 1px solid red;
-    /* position:absolute; */
-    /* padding: 6px 5px; 
-    width: 120px;
-    /* width: 100%; 
-} 
-*/
