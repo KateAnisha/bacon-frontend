@@ -8,7 +8,17 @@ export default function BarChart({type}) {
   const { transactions } = useContext(stateContext)
   const [options, setOptions] = useState({
     chart: {id: "basic-bar"},
-    xaxis: {categories: []},
+    xaxis: {
+      categories: [], 
+      axisBorder: {
+        color: '#969696', height: 2
+      },
+      labels: {
+        style: {
+          fontSize: '14px',
+        }
+      }
+    },
     yaxis: [
       {
         labels: {
@@ -18,7 +28,13 @@ export default function BarChart({type}) {
         }
       }
     ],
-    fill: {colors: ['#32B2A7']}
+    fill: {colors: ['#32B2A7']},
+    dataLabels: {
+      style: {
+        colors: ['#7c7c7c'],
+        fontSize: '16px'
+      }
+    }
   })
   const [series, setSeries] = useState([
     {name: "series-1", data: []}
@@ -44,18 +60,11 @@ export default function BarChart({type}) {
         current_month_category_totals.push(category_total)
       }
       setOptions({
-        chart: {id: "basic-bar"},
-        xaxis: {categories: current_month_categories},
-        yaxis: [
-          {
-            labels: {
-              formatter: function(val) {
-                return val.toFixed(0);
-              }
-            }
-          }
-        ],
-        fill: {colors: ['#32B2A7']}
+        ...options,
+        xaxis: {
+          ...options.xaxis, 
+          categories: current_month_categories
+        }
       })
       setSeries([
         {name: "series-1", data: current_month_category_totals}

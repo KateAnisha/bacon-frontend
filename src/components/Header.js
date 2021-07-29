@@ -41,12 +41,12 @@ export default function Header() {
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
                             <Dropdown.Item>
-                                <Link to="/budget" style={linkStyle}>
+                                <Link to="/categories/new" style={linkStyle}>
                                     Create Category
                                 </Link>
                             </Dropdown.Item>
                             <Dropdown.Item>
-                                <Link to="/budget" style={linkStyle}>
+                                <Link to="/categories" style={linkStyle}>
                                     View Categories
                                 </Link>
                             </Dropdown.Item>
@@ -60,12 +60,12 @@ export default function Header() {
                         </Dropdown.Toggle>
                         <Dropdown.Menu>
                             <Dropdown.Item>
-                                <Link to="/budget" style={linkStyle}>
+                                <Link to="/user/name" style={linkStyle}>
                                     Update Name
                                 </Link>
                             </Dropdown.Item>
                             <Dropdown.Item>
-                                <Link to="/budget" style={linkStyle}>
+                                <Link to="/user/password" style={linkStyle}>
                                     Update Password
                                 </Link>
                             </Dropdown.Item>

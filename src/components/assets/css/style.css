@@ -103,10 +103,12 @@ body {
 
 #home-income-barchart {
     grid-area: income-chart;
+    padding-bottom: 22px;
 }
 
 #home-expense-barchart {
     grid-area: expense-chart;
+    padding-bottom: 22px;
 }
 
 #transactions th {
