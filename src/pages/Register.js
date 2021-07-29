@@ -7,7 +7,6 @@ import { Link } from 'react-router-dom'
 
 import appLogo from '../components/assets/images/Logo-final.svg'
 import pigImg from '../components/assets/images/login-piggy.svg'
-import '../components/assets/css/main.css';
 
 export default function Register() {
     const history = useHistory()
@@ -47,7 +46,7 @@ export default function Register() {
     }
 
     return (
-        <div className="wrapper">
+        <div className="">
             <img src={pigImg} alt="Piggybank Icon" className="pig-img"/>
             <div className="left">
                 <img src={appLogo} alt="Application Logo" className="app-logo"/>

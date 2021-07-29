@@ -112,10 +112,10 @@ function App() {
 
   return (
     <stateContext.Provider value={{ ...store, dispatch }}>
-      <div className="App">
-        <Router>
-          { cookies.token ? 
-            <>
+      <Router>
+        { 
+          cookies.token ? 
+          <>
             <Header />
             <MainNav />
             <Switch>
@@ -139,10 +139,9 @@ function App() {
               <Route exact path="/register" component={Register} />
               <Route exact path="/login" component={Login} />
             </Switch>
-            </>
-          }
-        </Router>
-      </div>
+          </>
+        }
+      </Router>
     </stateContext.Provider>
   )
 }

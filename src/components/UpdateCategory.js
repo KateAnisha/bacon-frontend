@@ -42,6 +42,10 @@ export default function UpdateCategory() {
                     type: "updateCategories",
                     category: data
                 })
+                dispatch({
+                    type: "updateCategoryInTransactions",
+                    category: data
+                })
             } else {
                 setErrorMessage(data.error)
             }

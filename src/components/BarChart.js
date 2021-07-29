@@ -4,7 +4,7 @@ import { useContext } from 'react'
 import { stateContext } from '../stateReducer'
 
 
-export default function BarChart() {
+export default function BarChart({type}) {
   const { transactions } = useContext(stateContext)
   const [options, setOptions] = useState({
     chart: {id: "basic-bar"},
@@ -29,7 +29,7 @@ export default function BarChart() {
       const current_month_transactions = transactions.filter(transaction => transaction.date.split("-")[1] == current_month_index + 1)
       let current_month_categories = []
       for (let i=0; i<current_month_transactions.length; i++) {
-        if (current_month_transactions[i].type == "Expense" && !current_month_categories.includes(current_month_transactions[i].category)) {
+        if (current_month_transactions[i].type == type && !current_month_categories.includes(current_month_transactions[i].category)) {
           current_month_categories.push(current_month_transactions[i].category)
         }
       }
@@ -68,8 +68,8 @@ export default function BarChart() {
         options={options}
         series={series}
         type="bar"
-        width="800"
-        height="400"
+        width="700"
+        height="300"
       />
     </div>
   )
