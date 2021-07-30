@@ -5,7 +5,9 @@ import { stateContext } from '../stateReducer'
 
 
 export default function BarChart({type}) {
-  const { transactions } = useContext(stateContext)
+  const { transactions, categories } = useContext(stateContext)
+  const categoryType = categories.filter(category => category.type === type)
+  const xaisColors = Array(categoryType.length).fill('#969696')
   const [options, setOptions] = useState({
     chart: {id: "basic-bar"},
     xaxis: {
@@ -15,7 +17,8 @@ export default function BarChart({type}) {
       },
       labels: {
         style: {
-          fontSize: '14px',
+          fontSize: '16px',
+          colors: xaisColors
         }
       }
     },
@@ -24,6 +27,10 @@ export default function BarChart({type}) {
         labels: {
           formatter: function(val) {
             return val.toFixed(0);
+          },
+          style: {
+            colors: ['#32B2A7'],
+            fontSize: '14px'
           }
         }
       }

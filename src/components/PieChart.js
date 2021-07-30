@@ -37,7 +37,7 @@ export default function PieChart({type}) {
               options={options}
               series={series}
               type="donut"
-              width="500"
+              width="450"
             />
         </div>
     )

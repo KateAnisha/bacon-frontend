@@ -82,7 +82,8 @@ export default function LineChart({type, lineColor}) {
         options={options}
         series={series}
         type="line"
-        width="500"
+        width="800"
+        height="300"
       />
     </div>
   )

@@ -37,6 +37,7 @@ export default function TransactionForm({type}) {
             setAmount("")
             setCategory("")
             setDate("")
+            setErrorMessage("")
         } else {
             setErrorMessage(data.error)
         }
@@ -50,17 +51,56 @@ export default function TransactionForm({type}) {
 
     return (
         <>
-            <h2>{type}</h2>
+            <h3 className="text-black-50">{type}</h3>
             {errorMessage && <h4 style={{ color: "red" }}>{errorMessage}</h4>}
             <form className="transaction-form" onSubmit={submit}>
-                <select name="category" value={category} onChange={(e) => setCategory(e.target.value)}>
-                    <option>Category</option>
-                    {filtered_categories}
-                </select>
-                <input type="text" value={description} name="description" placeholder="Description" onChange={(e) => setDescription(e.target.value)} />
-                <input type="date" value={date} name="date" placeholder="Date" onChange={(e) => setDate(e.target.value)} />
-                <input type="number" step="0.01" value={amount} name="amount" placeholder="Amount" onChange={(e) => setAmount(e.target.value)} />
-                <input type="submit" value="Add transaction" id="submit-btn" />
+                <div>
+                    <label className="text-black-50">Category: </label>
+                    <select 
+                        name="category" 
+                        value={category} 
+                        onChange={(e) => setCategory(e.target.value)}
+                    >
+                        <option>Category</option>
+                        {filtered_categories}
+                    </select>
+                </div>
+                <div>
+                    <label className="text-black-50">Description: </label>
+                    <input 
+                        type="text" 
+                        value={description} 
+                        name="description" 
+                        placeholder="Description" 
+                        onChange={(e) => setDescription(e.target.value)} 
+                    />
+                </div>
+                <div>
+                    <label className="text-black-50">Date: </label>
+                    <input 
+                        type="date" 
+                        value={date} 
+                        name="date" 
+                        placeholder="Date" 
+                        onChange={(e) => setDate(e.target.value)} 
+                    />
+                </div>
+                <div>
+                    <label className="text-black-50">Amount: </label>
+                    <input 
+                        type="number" 
+                        step="0.01" 
+                        value={amount} 
+                        name="amount" 
+                        placeholder="Amount" 
+                        onChange={(e) => setAmount(e.target.value)} 
+                    />
+                </div>
+                <input 
+                    type="submit" 
+                    value="Add transaction" 
+                    id="submit-btn" 
+                />
             </form>
         </>
     )

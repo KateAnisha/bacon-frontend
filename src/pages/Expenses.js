@@ -6,23 +6,15 @@ import TransactionForm from '../components/TransactionForm'
 
 function Expenses() {
     return ( 
-        <>
-            <div className="expenses-page">
-                <div className="display-transactions" id="full-transaction">
-                <h2>Expense transaction history</h2>
-                    <Transactions type={"Expense"}/>
-                </div>
-
-                <div className="transaction-form">
-                    {/* <Header totalIncome={totalIncome} /> */}
-                    <TransactionForm type={"Expense"} />
-                    {/* <ExpenseTransactions income={income} setIncome={setIncome}/> */}
-                    {/* <TransactionItem income={income} /> */}
-                </div>
+        <body className="transaction-page ps-4">
+            <h3 className="transaction-page-title ps-4 text-black-50">Expense transaction history</h3>
+            <div className="transactions">
+                <Transactions type={"Expense"} limit={15} />
             </div>
-        
-        </>
-       
+            <div className="transaction-form">
+                <TransactionForm type={"Expense"} />
+            </div>
+        </body>
     )
 }
 

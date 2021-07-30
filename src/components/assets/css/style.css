@@ -2,10 +2,6 @@ h3, h4 {
     margin-bottom: 0px !important;
 }
 
-header {
-    margin: 0px;
-}
-
 #root {
     height: 100vh;
     display: grid;
@@ -17,6 +13,8 @@ header {
 }
 
 header {
+    margin: 0px;
+    background-color: #ededed;
     grid-area: header;
     display: grid;
     grid-template-columns: 15% 10% 10% 10% 10% 45%;
@@ -27,6 +25,10 @@ header {
 #logo {
     grid-area: logo;
     align-self: center;
+}
+
+#dropdown-item:hover {
+    background-color: #98d8d3;
 }
 
 #manage-budget {
@@ -42,7 +44,7 @@ header {
 #user-setting {
     grid-area: user-setting;
     align-self: center;
-    padding-left: 25px;
+    padding-left: 27px;
 }
 
 #budget-amount {
@@ -56,6 +58,7 @@ header {
 }
 
 nav {
+    background-color: #ededed;
     grid-area: nav;
 }
 
@@ -103,12 +106,12 @@ body {
 
 #home-income-barchart {
     grid-area: income-chart;
-    padding-bottom: 22px;
+    align-self: start;
 }
 
 #home-expense-barchart {
     grid-area: expense-chart;
-    padding-bottom: 22px;
+    align-self: start;
 }
 
 #transactions th {
@@ -131,7 +134,7 @@ body {
 }
 
 #transactions td {
-    color: #7c7c7c;
+    color: #969696;
 }
 
 #transaction-category {
@@ -148,4 +151,71 @@ body {
 
 #transaction-action {
     width:110px;
+}
+
+#dashboard {
+    display: grid;
+    /* justify-items: center; */
+    align-items: center;
+    grid-template-rows: 7% 40% 7% 40% 6%;
+    grid-template-columns: 50% 20% 30%;
+    grid-template-areas:
+        "income-title income-title filter"
+        "income-line-chart income-pie-chart filter"
+        "expense-title expense-title filter"
+        "expense-line-chart expense-pie-chart filter"
+        "footer footer footer";
+}
+
+#income-title {
+    grid-area: income-title;
+}
+
+#expense-title {
+    grid-area: expense-title;
+}
+
+#income-line-chart {
+    padding-left: 25px;
+    grid-area: income-line-chart;
+}
+
+#income-pie-chart {
+    grid-area: income-pie-chart;
+}
+
+#expense-line-chart {
+    padding-left: 25px;
+    grid-area: expense-line-chart;
+}
+
+#expense-pie-chart {
+    grid-area: expense-pie-chart;
+}
+
+.transaction-page {
+    display: grid;
+    align-items: center;
+    grid-template-rows: 7% 87% 6%;
+    grid-template-columns: 60% 40%;
+    grid-template-areas:
+        "title form-title"
+        "transactions form"
+}
+
+.transaction-page-title {
+    grid-area: title;
+}
+
+.transactions {
+    grid-area: transactions;
+    align-self: start;
+    padding-left: 25px;
+}
+
+.transaction-form {
+    grid-area: form;
+    align-self: start;
+    display: flex;
+    flex-direction: column;
 }

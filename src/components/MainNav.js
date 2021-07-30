@@ -12,7 +12,7 @@ export default function MainNav() {
   const [cookies, setCookie, removeCookie] = useCookies(['token'])
 
   return (
-    <nav className="d-flex flex-column justify-content-evenly align-items-center bg-light main-nav">
+    <nav className="d-flex flex-column justify-content-evenly align-items-center main-nav">
         <div className="flex-row">
           <Link to="/"><img src={Home} alt="Home Icon" width="62px"/></Link>
         </div>

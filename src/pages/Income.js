@@ -6,16 +6,15 @@ import TransactionForm from '../components/TransactionForm'
 
 export default function Income() {
     return ( 
-        <>
-            <div className="content-wrapper">
-                <div className="display-transactions">
-                   <Transactions type={"Income"}/>
-                </div>
-                <div className="transaction-form">
-                    <TransactionForm type={"Income"} />
-                </div>
+        <body className="transaction-page ps-4">
+            <h3 className="transaction-page-title ps-4 text-black-50">Income transaction history</h3>
+            <div className="transactions">
+                <Transactions type={"Income"} limit={15} />
             </div>
-        </>
+            <div className="transaction-form">
+                <TransactionForm type={"Income"} />
+            </div>
+        </body>
        
     )
 }
