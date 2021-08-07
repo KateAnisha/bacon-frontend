@@ -6,6 +6,7 @@ import Home from '../components/assets/images/link-img/home.svg'
 import Income from '../components/assets/images/link-img/income.svg'
 import Chart from '../components/assets/images/link-img/chart.svg'
 import Expenses from '../components/assets/images/link-img/expenses.svg'
+import Logout from '../components/assets/images/link-img/exit.png'
 
         
 export default function MainNav() {
@@ -26,7 +27,7 @@ export default function MainNav() {
           <Link to="/dashboard"><img src={Chart} alt="Chart Icon" width="60px"/></Link>
         </div>
         <div className="flex-row">
-          <Link to="/entrance" onClick={() => removeCookie('token')}>LOUT OUT</Link>
+          <Link to="/entrance" onClick={() => removeCookie('token')}><img src={Logout} alt="Chart Icon" width="60px"/></Link>
         </div>
     </nav>
   )

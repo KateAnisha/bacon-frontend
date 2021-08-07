@@ -214,8 +214,106 @@ body {
 }
 
 .transaction-form {
+    height: 50%;
     grid-area: form;
     align-self: start;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+    grid-template-columns: 60%;
+    grid-template-areas:
+        "transaction-form-category"
+        "transaction-form-description"
+        "transaction-form-date"
+        "transaction-form-amount"
+        "transaction-form-submit";
+}
+
+
+.transaction-form input {
+    border: 1px solid #969696;
+    height: 30px;
+    color: #969696;
+}
+
+.transaction-form input:focus {
+    border: none !important;
+    outline: 2px solid #32B2A7 !important;
+}
+
+select {
+    color: #969696;
+    height: 30px;
+    border: 1px solid #969696;
+}
+
+select:focus {
+    border: none !important;
+    outline: 2px solid #32B2A7 !important;
+}
+
+#transaction-form-category, #transaction-form-description, #transaction-form-date, #transaction-form-amount {
+    align-items: center;
+    padding-bottom: 10%;
+    display: grid;
+    grid-template-columns: 30% 70%;
+}
+
+#transaction-form-category {
+    grid-area: transaction-form-category;
+    grid-template-areas:
+        "label-category field-category";
+}
+
+#transaction-form-description {
+    grid-area: transaction-form-description;
+    grid-template-areas:
+        "label-description field-description";
+}
+
+#transaction-form-date {
+    grid-area: transaction-form-date;
+    grid-template-areas:
+        "label-date field-date";
+}
+
+#transaction-form-amount {
+    grid-area: transaction-form-amount;
+    grid-template-areas:
+        "label-amount field-amount";
+}
+
+#label-category {
+    grid-area: label-category;
+}
+
+#label-description {
+    grid-area: label-description;
+}
+
+#label-date {
+    grid-area: label-date;
+}
+
+#label-amount {
+    grid-area: label-amount;
+}
+
+#field-category {
+    grid-area: field-category;
+}
+
+#field-description {
+    grid-area: field-description;
+}
+
+#field-date {
+    grid-area: field-date;
+}
+
+#field-amount {
+    grid-area: field-amount;
+}
+
+.box-shadow {
+    box-shadow: #32B2A7 !important;
 }

@@ -14,7 +14,6 @@ export default function UpdateCategory() {
     const [cookies, setCookie] = useCookies(['token'])
     const [errorMessage, setErrorMessage] = useState()
     const [description, setDescription] = useState()
-    const [type, setType] = useState()
 
     useEffect(() => {
         const selected_category = categories.find(category => category.id == category_id) 
@@ -24,8 +23,8 @@ export default function UpdateCategory() {
 
     const submit = async (event) => {
         event.preventDefault()
-        if (categories.find(category => category.type === type && category.description === description) === undefined) {
-            const cateogry = { description: description, category_type: type }
+        if (categories.find(category => category.type === selectedCategory.type && category.description === description) === undefined) {
+            const cateogry = { description: description, category_type: selectedCategory.type }
             const res = await fetch(`${process.env.REACT_APP_API_ENDPOINT}user/categories/${category_id}`, {
                 method: "PUT",
                 body: JSON.stringify(cateogry),
@@ -37,7 +36,6 @@ export default function UpdateCategory() {
             const data = await res.json()
             if (res.status === 200) {
                 setDescription("")
-                setType("")
                 dispatch({
                     type: "updateCategories",
                     category: data
@@ -56,7 +54,7 @@ export default function UpdateCategory() {
 
 
     return (
-        <>
+        <div>
             <div>
                 <h2>Current value</h2>
                 <p><strong>Type: </strong>{selectedCategory ? selectedCategory.type : ''}</p>
@@ -66,18 +64,12 @@ export default function UpdateCategory() {
                 <h2>Update category</h2>
                 {errorMessage && <h4 style={{ color: "red" }}>{errorMessage}</h4>}
                 <form className="transaction-form" onSubmit={submit}>
-                    <select name="type" value={type} onChange={(e) => setType(e.target.value)}>
-                        <option value="">Type</option>
-                        <option value="Income">Income</option>
-                        <option value="Expense">Expense</option>
-                    </select>
                     <br />
                     <input type="text" value={description} name="description" placeholder="Description" onChange={(e) => setDescription(e.target.value)} />
                     <br />
                     <input type="submit" value="Update" id="submit-btn" />
                 </form>
             </div>
-           
-        </>
+        </div>
     )
 }

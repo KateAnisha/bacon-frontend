@@ -11,6 +11,7 @@ export default function Income() {
             <div className="transactions">
                 <Transactions type={"Income"} limit={15} />
             </div>
+            <h3 className="transaction-form-title text-black-50">Add income transaction</h3>
             <div className="transaction-form">
                 <TransactionForm type={"Income"} />
             </div>

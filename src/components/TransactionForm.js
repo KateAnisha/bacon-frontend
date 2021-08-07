@@ -14,6 +14,9 @@ export default function TransactionForm({type}) {
     const [date, setDate] = useState("")
     const [category, setCategory] = useState()
     const { categories, dispatch } = useContext(stateContext)
+    const shadowStyle = {
+        boxShadow: "none"
+    }
 
     const submit = async (event) => {
         event.preventDefault()
@@ -51,23 +54,26 @@ export default function TransactionForm({type}) {
 
     return (
         <>
-            <h3 className="text-black-50">{type}</h3>
             {errorMessage && <h4 style={{ color: "red" }}>{errorMessage}</h4>}
-            <form className="transaction-form" onSubmit={submit}>
-                <div>
-                    <label className="text-black-50">Category: </label>
+            <form onSubmit={submit}>
+                <div id="transaction-form-category">
+                    <label id="label-category" className="text-black-50" for="category">Category: </label>
                     <select 
+                        id="field-category"
                         name="category" 
                         value={category} 
                         onChange={(e) => setCategory(e.target.value)}
+                        className=""
+                        style={shadowStyle}
                     >
                         <option>Category</option>
                         {filtered_categories}
                     </select>
                 </div>
-                <div>
-                    <label className="text-black-50">Description: </label>
+                <div id="transaction-form-description">
+                    <label id="label-description" className="text-black-50" for="description">Description: </label>
                     <input 
+                        id="field-description"
                         type="text" 
                         value={description} 
                         name="description" 
@@ -75,9 +81,10 @@ export default function TransactionForm({type}) {
                         onChange={(e) => setDescription(e.target.value)} 
                     />
                 </div>
-                <div>
-                    <label className="text-black-50">Date: </label>
+                <div id="transaction-form-date">
+                    <label id="label-date" className="text-black-50" for="date">Date: </label>
                     <input 
+                        id="field-date"
                         type="date" 
                         value={date} 
                         name="date" 
@@ -85,9 +92,10 @@ export default function TransactionForm({type}) {
                         onChange={(e) => setDate(e.target.value)} 
                     />
                 </div>
-                <div>
-                    <label className="text-black-50">Amount: </label>
-                    <input 
+                <div id="transaction-form-amount">
+                    <label id="label-amount" className="text-black-50" for="amount">Amount: </label>
+                    <input
+                        id="field-amount"
                         type="number" 
                         step="0.01" 
                         value={amount} 
@@ -99,7 +107,7 @@ export default function TransactionForm({type}) {
                 <input 
                     type="submit" 
                     value="Add transaction" 
-                    id="submit-btn" 
+                    id="transaction-form-submit-btn" 
                 />
             </form>
         </>
