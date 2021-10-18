@@ -4,8 +4,8 @@ import { useContext } from 'react'
 import { stateContext } from '../stateReducer'
 
 
-export default function PieChart({type}) {
-    const { transactions, categories } = useContext(stateContext)
+export default function PieChart({type, transactions}) {
+    const { categories } = useContext(stateContext)
     const [options, setOptions] = useState({labels: []})
     const [series, setSeries] = useState([])
 
@@ -37,7 +37,7 @@ export default function PieChart({type}) {
               options={options}
               series={series}
               type="donut"
-              width="450"
+              width="400"
             />
         </div>
     )

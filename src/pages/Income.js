@@ -9,7 +9,7 @@ export default function Income() {
         <body className="transaction-page ps-4">
             <h3 className="transaction-page-title ps-4 text-black-50">Income transaction history</h3>
             <div className="transactions">
-                <Transactions type={"Income"} limit={15} />
+                <Transactions type={"Income"} limit={13} />
             </div>
             <h3 className="transaction-form-title text-black-50">Add income transaction</h3>
             <div className="transaction-form">

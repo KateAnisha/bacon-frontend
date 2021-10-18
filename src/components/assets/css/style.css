@@ -5,8 +5,8 @@ h3, h4 {
 #root {
     height: 100vh;
     display: grid;
-    grid-template-rows: 12% 88%;
-    grid-template-columns: 7% 93%;
+    grid-template-rows: 15% 85%;
+    grid-template-columns: 10% 90%;
     grid-template-areas:
         "header header"
         "nav body";
@@ -17,49 +17,48 @@ header {
     background-color: #ededed;
     grid-area: header;
     display: grid;
-    grid-template-columns: 15% 10% 10% 10% 10% 45%;
+    grid-template-columns: 70% 30%;
     grid-template-areas:
-        "logo manage-budget manage-category user-setting x budget-amount"
+        "nav budget-amount"
+}
+
+header nav {
+    display: flex;
+    grid-area: nav;
 }
 
 #logo {
-    grid-area: logo;
-    align-self: center;
+    padding-left: 10px;
+    margin-right: 40px;
 }
 
 #dropdown-item:hover {
     background-color: #98d8d3;
 }
 
-#manage-budget {
-    grid-area: manage-budget;
+#manage-budget, #manage-category, #user-setting {
     align-self: center;
-}
-
-#manage-category {
-    grid-area: manage-category;
-    align-self: center;
-}
-
-#user-setting {
-    grid-area: user-setting;
-    align-self: center;
-    padding-left: 27px;
+    margin-right: 50px;
 }
 
 #budget-amount {
     grid-area: budget-amount;
     align-self: center;
-    padding-right: 30px
+    padding-right: 20px
 }
 
 #amount {
     color: #32B2A7;
 }
 
-nav {
+aside {
     background-color: #ededed;
     grid-area: nav;
+    justify-content: space-evenly;
+}
+
+aside div {
+    height: 75px;
 }
 
 body {
@@ -72,7 +71,7 @@ body {
     grid-area: body;
     display: grid;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 7% 8% 33% 8% 44%;
+    grid-template-rows: 6% 7% 40% 7% 40%;
     grid-template-areas:
         "welcome welcome"
         "recent-transaction recent-transaction"
@@ -121,7 +120,7 @@ body {
   }
 
 #transactions tr:nth-child(even) {
-     background-color: #f2f2f2;
+    background-color: #f2f2f2;
 }
 
 #transactions tr:hover {
@@ -138,15 +137,15 @@ body {
 }
 
 #transaction-category {
-    width:120px;
+    width:100px;
 }
 
 #transaction-description {
-    width:250px;
+    width:200px;
 }
 
 #transaction-amount {
-    width:120px;
+    width: min-content;
 }
 
 #transaction-action {
@@ -158,9 +157,9 @@ body {
     /* justify-items: center; */
     align-items: center;
     grid-template-rows: 7% 40% 7% 40% 6%;
-    grid-template-columns: 50% 20% 30%;
+    grid-template-columns: 50% 30% 20%;
     grid-template-areas:
-        "income-title income-title filter"
+        "income-title income-title filter-title"
         "income-line-chart income-pie-chart filter"
         "expense-title expense-title filter"
         "expense-line-chart expense-pie-chart filter"
@@ -191,6 +190,27 @@ body {
 
 #expense-pie-chart {
     grid-area: expense-pie-chart;
+}
+
+#year-filters-container, #month-filters-container {
+    grid-area: filter;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-auto-flow: row;
+}
+
+#dashboard-filters {
+    align-self: start;
+    margin-left: 20px;
+    background: #ededed;
+    box-sizing: border-box;
+    padding: 10px 0;
+    margin-right: 20px;
+    border-radius: 5px;
+}
+
+#dashboard-filters-title {
+    margin-left: 20px;
 }
 
 .transaction-page {
@@ -314,6 +334,25 @@ select:focus {
     grid-area: field-amount;
 }
 
+#transaction-form-submit-btn {
+    background-color: #32B2A7;
+    color: white;
+    border: none;
+    padding: 0 20px;
+}
+
 .box-shadow {
     box-shadow: #32B2A7 !important;
+}
+
+.green-theme {
+    color: white;
+    background-color: #32B2A7;
+    border: none;
+}
+
+.grey-theme {
+    color: white;
+    background-color: #6B6B6B;
+    border: none;
 }

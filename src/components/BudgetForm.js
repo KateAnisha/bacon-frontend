@@ -35,9 +35,13 @@ export default function BudgetForm() {
     }
 
     return (
-        <form className="transaction-form" onSubmit={submit}>
-            <input type="number" step="0.01" value={updatedBudget} name="budget" placeholder="Budget" onChange={(e) => setUpdatedBudget(e.target.value)} />
-            <input type="submit" value="Update" id="submit-btn" />
-        </form>
+        <section>
+            <h2>Update budget</h2>
+            <form className="transaction-form" onSubmit={submit}>
+                <label>Budget: </label>
+                <input type="number" step="0.01" value={updatedBudget} name="budget" placeholder="Budget" onChange={(e) => setUpdatedBudget(e.target.value)} />
+                <input type="submit" value="Update" id="submit-btn" />
+            </form>
+        </section>
     )
 }

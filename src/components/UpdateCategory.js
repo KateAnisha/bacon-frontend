@@ -54,7 +54,7 @@ export default function UpdateCategory() {
 
 
     return (
-        <div>
+        <section>
             <div>
                 <h2>Current value</h2>
                 <p><strong>Type: </strong>{selectedCategory ? selectedCategory.type : ''}</p>
@@ -70,6 +70,6 @@ export default function UpdateCategory() {
                     <input type="submit" value="Update" id="submit-btn" />
                 </form>
             </div>
-        </div>
+        </section>
     )
 }

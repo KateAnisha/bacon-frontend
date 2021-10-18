@@ -42,7 +42,7 @@ export default function CreateCategory() {
     }
 
     return (
-        <>
+        <section>
             <h2>Create category</h2>
             {errorMessage && <h4 style={{ color: "red" }}>{errorMessage}</h4>}
             <form className="transaction-form" onSubmit={submit}>
@@ -54,7 +54,7 @@ export default function CreateCategory() {
                 <input type="text" value={description} name="description" placeholder="Description" onChange={(e) => setDescription(e.target.value)} />
                 <input type="submit" value="Create" id="submit-btn" />
             </form>
-        </>
+        </section>
     )
 }
 

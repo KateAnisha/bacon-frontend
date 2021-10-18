@@ -4,8 +4,8 @@ import { useContext } from 'react'
 import { stateContext } from '../stateReducer'
 
 
-export default function LineChart({type, lineColor}) {
-  const { transactions } = useContext(stateContext)
+export default function LineChart({type, lineColor, transactions}) {
+  // const { transactions } = useContext(stateContext)
   const [options, setOptions] = useState({
     chart: {id: "basic-bar"},
     xaxis: {categories: []},
@@ -30,7 +30,7 @@ export default function LineChart({type, lineColor}) {
   useEffect(() => {
     const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
     const transactions_sort_by_date = transactions.sort((a, b) => {
-        return new Date(a.date) - new Date(b.date);
+      return new Date(a.date) - new Date(b.date);
     })
     const categories = []
     for (let i=0; i<transactions_sort_by_date.length; i++) {
@@ -41,23 +41,10 @@ export default function LineChart({type, lineColor}) {
       }
     }
     setOptions({
-      chart: {id: "basic-bar"},
-      xaxis: {categories: categories},
-      yaxis: [
-          {
-            labels: {
-              formatter: function(val) {
-                return val.toFixed(0);
-              }
-            }
-          }
-        ],
-      colors: [lineColor],
-      stroke: {
-          curve: 'smooth'
-        }
+      ...options,
+      xaxis: {categories: categories.slice(-12)}
     })
-      
+    
     const data = []
     for (let i=0; i<categories.length; i++) {
       let monthly_total = 0
@@ -72,7 +59,7 @@ export default function LineChart({type, lineColor}) {
       data.push(monthly_total)
     }
     setSeries([
-      {name: type, data: data}
+      {name: type, data: data.slice(-12)}
     ])
   }, [transactions])
 
@@ -82,8 +69,8 @@ export default function LineChart({type, lineColor}) {
         options={options}
         series={series}
         type="line"
-        width="800"
-        height="300"
+        width="600"
+        height="250"
       />
     </div>
   )

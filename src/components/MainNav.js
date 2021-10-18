@@ -13,7 +13,7 @@ export default function MainNav() {
   const [cookies, setCookie, removeCookie] = useCookies(['token'])
 
   return (
-    <nav className="d-flex flex-column justify-content-evenly align-items-center main-nav">
+    <aside className="d-flex flex-column align-items-center">
         <div className="flex-row">
           <Link to="/"><img src={Home} alt="Home Icon" width="62px"/></Link>
         </div>
@@ -29,7 +29,7 @@ export default function MainNav() {
         <div className="flex-row">
           <Link to="/entrance" onClick={() => removeCookie('token')}><img src={Logout} alt="Chart Icon" width="60px"/></Link>
         </div>
-    </nav>
+    </aside>
   )
 }
 
